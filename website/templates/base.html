@@ -1,1 +1,38 @@
-<!-- В будущем, шаблон для страниц, чтоб не писать одно и то же -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device=width, initial=scale=1" />
+
+    <title>{% block title %}Home{% endblock %}</title>
+    <title>Title</title>
+</head>
+<body>
+  <nav>
+    <button  
+      type="button" 
+      data-toggle="collapse" 
+      data-target="#navbar"
+    >
+      <span></span>
+    </button>
+      <div id="navbar">
+        <div>
+        <a id="home" href="/">Home</a>
+        <a id="logout" href="/logout">Logout</a>
+        <a id="login" href="/login">Login</a>
+        <a id="signUp" href="/sign-up">Sign Up</a>
+        </div>
+      </div>
+    </nav>
+
+    <div>
+    {% block content%}
+    {% endblock %}
+    </div>
+
+    <script
+    type="text/javascript"
+    src="{{ url_for('static', filename='index.js') }}"></script>
+</body>
+</html>
