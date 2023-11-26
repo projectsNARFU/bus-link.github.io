@@ -1,8 +1,18 @@
-{% extends "base.html" %} {% block title %}Traffic controller{% endblock %}
+{% extends "base.html" %}
+
+{% block head %}
+<title>Traffic controller</title>
+{{ header|safe }}
+{% endblock %}
 
 {% block content%}
 <br />
 <a id="supervisor" href="/traffic-controller/chat">chat with drivers</a>
-<h1 align="center">Я КАРТА</h1>
+<h1>Embed folium map in HTML page</h1>
+{{ body_html|safe }}
+<h3>This map is embeded in a flask server web page !</h3>
+<script>
+    {{ script|safe }}
+</script>
 <button>Связь с экстренными службами</button>
 {% endblock %}

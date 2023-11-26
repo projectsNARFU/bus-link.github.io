@@ -1,5 +1,6 @@
-from flask import Blueprint, render_template, request, flash, jsonify
+from flask import Blueprint, render_template, render_template_string, request, flash, jsonify
 from flask_login import login_required, current_user
+import folium
 from . import db
 import json
 
@@ -20,12 +21,36 @@ def supervisor():
 
 @views.route('/traffic-controller', methods=['GET', 'POST'])
 def traffic_controller():
-    return render_template("traffic_controller.html", user=current_user)
+
+    mapObj = folium.Map(location=[18.906286495910905, 79.40917968750001],
+                        zoom_start=5, width=800, height=500)
+
+    # add a marker to the map object
+    folium.Marker([17.4127332, 78.078362],
+                popup="<i>This a marker</i>").add_to(mapObj)
+
+    # render the map object
+    mapObj.get_root().render()
+
+    # derive the script and style tags to be rendered in HTML head
+    header = mapObj.get_root().header.render()
+
+    # derive the div container to be rendered in the HTML body
+    body_html = mapObj.get_root().html.render()
+
+    # derive the JavaScript to be rendered in the HTML body
+    script = mapObj.get_root().script.render()
+
+    # print(header, body_html, script)
+
+    return render_template('traffic_controller.html', user=current_user, 
+                        header=header, body_html=body_html, script=script)
 
 
 @views.route('/traffic-controller/chat', methods=['GET', 'POST'])
 def traffic_controller_chat():
-    return render_template("traffic_controller_chat.html", user=current_user)
+    test_list_drivers = ['vanya', 'dima', 'bob']
+    return render_template("traffic_controller_chat.html", user=current_user, drivers=test_list_drivers)
 
 
 @views.route('/driver', methods=['GET', 'POST'])
