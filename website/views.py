@@ -18,7 +18,21 @@ def supervisor():
     return render_template("supervisor.html", user=current_user)
 
 
-# @views.route('/', methods=['GET', 'POST'])
-# # @login_required
-# def home():
-#     return render_template("home.html", user=current_user)
+@views.route('/traffic-controller', methods=['GET', 'POST'])
+def traffic_controller():
+    return render_template("traffic_controller.html", user=current_user)
+
+
+@views.route('/traffic-controller/chat', methods=['GET', 'POST'])
+def traffic_controller_chat():
+    return render_template("traffic_controller_chat.html", user=current_user)
+
+
+@views.route('/driver', methods=['GET', 'POST'])
+def driver():
+    return render_template("driver.html", user=current_user)
+
+
+@views.route('/passenger', methods=['GET', 'POST'])
+def passenger():
+    return render_template("passenger.html", user=current_user)

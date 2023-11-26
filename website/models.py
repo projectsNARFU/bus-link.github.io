@@ -1,7 +1,7 @@
 from . import db 
 from flask_login import UserMixin
 # бд здесь чисто для вида, потом на норм заменить
-from sqlalchemy.sql import func
+# from sqlalchemy.sql import func
 
 
 """
