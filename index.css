@@ -4,8 +4,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 854px;
-  height: 480px;
+  width: 1920px;
+  height: 1080px;
   object-fit: cover;
 }
 .triangle-1-icon6,
@@ -128,7 +128,7 @@
   position: relative;
   background-color: var(--color-white);
   width: 100%;
-  height: 480px;
+  height: 1080px;
   overflow: hidden;
   text-align: left;
   font-size: var(--font-size-mini);
