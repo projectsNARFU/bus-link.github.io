@@ -1,0 +1,95 @@
+.background-icon5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 854px;
+  height: 480px;
+  object-fit: cover;
+}
+.div8 {
+  position: absolute;
+  top: 103px;
+  left: 288px;
+  font-size: var(--font-size-5xl);
+}
+.div10,
+.div9 {
+  position: absolute;
+  top: 161px;
+  left: 307px;
+}
+.div10 {
+  top: 233px;
+}
+.rectangle-again-password,
+.rectangle-new-password {
+  border: 1.5px solid var(--color-black);
+  background-color: var(--color-white);
+  position: absolute;
+  top: 181px;
+  left: 307px;
+  border-radius: var(--br-9xs);
+  box-sizing: border-box;
+  width: 240px;
+  height: 33px;
+}
+.rectangle-again-password {
+  top: 253px;
+}
+.rectangle-confirm {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-xl);
+  background-color: var(--color-darkslateblue);
+  width: 180px;
+  height: 50px;
+}
+.confirm,
+.div11 {
+  position: absolute;
+}
+.div11 {
+  top: 11px;
+  left: 27px;
+  font-size: var(--font-size-xl);
+  font-family: var(--font-manrope);
+  color: var(--color-white);
+  text-align: left;
+}
+.confirm {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  top: 326px;
+  left: 337px;
+  width: 180px;
+  height: 50px;
+}
+.triangle-1-icon5,
+.triangle-2-icon5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 210px;
+  height: 210px;
+  object-fit: cover;
+}
+.triangle-2-icon5 {
+  top: 380px;
+  left: 754px;
+  width: 100px;
+  height: 100px;
+}
+.p5 {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 480px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-mini);
+  color: var(--color-black);
+  font-family: var(--font-manrope);
+}

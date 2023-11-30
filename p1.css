@@ -1,0 +1,43 @@
+.background-icon1,
+.triangle-1-icon1,
+.triangle-2-icon1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1920px;
+  height: px;
+  object-fit: cover;
+}
+.triangle-1-icon1,
+.triangle-2-icon1 {
+  width: 210px;
+  height: 210px;
+}
+.triangle-2-icon1 {
+  top: 380px;
+  left: 754px;
+  width: 100px;
+  height: 100px;
+}
+.button-3 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 6px;
+  left: 799px;
+  width: 50px;
+  height: 50px;
+  background-image: url(./public/button3@2x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+.p1 {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 1080px;
+  overflow: hidden;
+}

@@ -1,0 +1,134 @@
+.background-icon4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 854px;
+  height: 480px;
+  object-fit: cover;
+}
+.div1 {
+  position: absolute;
+  top: 58px;
+  left: 353px;
+  font-size: var(--font-size-5xl);
+}
+.div2,
+.div3,
+.rectangle-mail {
+  position: absolute;
+  top: 100px;
+  left: 307px;
+}
+.div3,
+.rectangle-mail {
+  top: 226px;
+}
+.rectangle-mail {
+  border: 1.5px solid var(--color-black);
+  background-color: var(--color-white);
+  top: 120px;
+  border-radius: var(--br-9xs);
+  box-sizing: border-box;
+  width: 240px;
+  height: 33px;
+}
+.div4 {
+  top: 163px;
+}
+.div4,
+.div5,
+.rectangle-login-reg {
+  position: absolute;
+  left: 307px;
+}
+.rectangle-login-reg {
+  border: 1.5px solid var(--color-black);
+  background-color: var(--color-white);
+  top: 183px;
+  border-radius: var(--br-9xs);
+  box-sizing: border-box;
+  width: 240px;
+  height: 33px;
+  font-size: large;
+  position: relative;
+}
+.div5 {
+  top: 288px;
+}
+.rectangle-code,
+.rectangle-password-reg {
+  border: 1.5px solid var(--color-black);
+  background-color: var(--color-white);
+  position: absolute;
+  top: 308px;
+  left: 307px;
+  border-radius: var(--br-9xs);
+  box-sizing: border-box;
+  width: 240px;
+  height: 33px;
+}
+.rectangle-password-reg {
+  top: 246px;
+}
+.rectangle-register {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-xl);
+  background-color: var(--color-darkslateblue);
+  width: 220px;
+  height: 50px;
+}
+.div6 {
+  top: 11px;
+  left: 10px;
+  font-size: var(--font-size-xl);
+  font-family: var(--font-manrope);
+  color: var(--color-white);
+  text-align: left;
+}
+.div6,
+.div7,
+.register {
+  position: absolute;
+}
+.register {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  top: 371px;
+  left: 317px;
+  width: 220px;
+  height: 50px;
+}
+.div7 {
+  top: 451px;
+  left: 427px;
+}
+.triangle-1-icon4,
+.triangle-2-icon4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 210px;
+  height: 210px;
+  object-fit: cover;
+}
+.triangle-2-icon4 {
+  top: 380px;
+  left: 754px;
+  width: 100px;
+  height: 100px;
+}
+.p4 {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 480px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-mini);
+  color: var(--color-black);
+  font-family: var(--font-manrope);
+}

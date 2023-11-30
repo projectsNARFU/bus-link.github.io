@@ -1,0 +1,76 @@
+.background-icon3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 854px;
+  height: 480px;
+  object-fit: cover;
+}
+.rectangle-emergency-services {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-xl);
+  background-color: var(--color-darkslateblue);
+  width: 330px;
+  height: 50px;
+}
+.div {
+  position: absolute;
+  top: 11px;
+  left: 12px;
+  font-size: var(--font-size-xl);
+  font-family: var(--font-manrope);
+  color: var(--color-white);
+  text-align: left;
+  display: inline-block;
+  width: 305.8px;
+}
+.emergency-services {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 402px;
+  left: 262px;
+  width: 330px;
+  height: 50px;
+}
+.triangle-1-icon3,
+.triangle-2-icon3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 210px;
+  height: 210px;
+  object-fit: cover;
+}
+.triangle-2-icon3 {
+  top: 380px;
+  left: 754px;
+  width: 100px;
+  height: 100px;
+}
+.button-1 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 7px;
+  left: 797px;
+  width: 50px;
+  height: 50px;
+  background-image: url(./public/button1@2x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+.p3 {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 480px;
+  overflow: hidden;
+}
