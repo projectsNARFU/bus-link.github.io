@@ -1,0 +1,129 @@
+.background-icon7,
+.triangle-1-icon7,
+.triangle-2-icon7 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1920px;
+  height: 1080px;
+  object-fit: cover;
+}
+.triangle-1-icon7,
+.triangle-2-icon7 {
+  width: 500px;
+  height: 500px;
+}
+.triangle-2-icon7 {
+  top: 830px;
+  left: 1670px;
+  width: 250px;
+  height: 250px;
+}
+.div16 {
+  position: absolute;
+  top: 92px;
+  left: 763px;
+  font-size: var(--font-size-45xl);
+}
+.div17,
+.div18,
+.rectangle-login-reg {
+  position: absolute;
+  top: 344px;
+  left: 610px;
+}
+.div18,
+.rectangle-login-reg {
+  top: 509px;
+}
+.rectangle-login-reg {
+  border: 3px solid var(--color-black);
+  background-color: var(--color-white);
+  top: 388px;
+  border-radius: var(--br-3xs);
+  box-sizing: border-box;
+  width: 700px;
+  height: 100px;
+}
+.div19 {
+  position: absolute;
+  top: 179px;
+  left: 611px;
+}
+.rectangle-mail-2,
+.rectangle-password-reg {
+  border: 3px solid var(--color-black);
+  background-color: var(--color-white);
+  position: absolute;
+  top: 223px;
+  left: 611px;
+  border-radius: var(--br-3xs);
+  box-sizing: border-box;
+  width: 700px;
+  height: 100px;
+}
+.rectangle-password-reg {
+  top: 553px;
+  left: 610px;
+}
+.div20 {
+  position: absolute;
+  top: 674px;
+  left: 610px;
+}
+.div21,
+.rectangle-code {
+  position: absolute;
+  top: 1028px;
+  left: 973px;
+}
+.rectangle-code {
+  border: 3px solid var(--color-black);
+  background-color: var(--color-white);
+  top: 718px;
+  left: 610px;
+  border-radius: var(--br-3xs);
+  box-sizing: border-box;
+  width: 700px;
+  height: 100px;
+}
+.register {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-xl);
+  background-color: var(--color-darkslateblue);
+  width: 660px;
+  height: 110px;
+}
+.div22 {
+  position: absolute;
+  top: 22px;
+  left: 89px;
+  font-size: var(--font-size-29xl);
+  font-family: var(--font-manrope);
+  color: var(--color-white);
+  text-align: left;
+}
+.register-button {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 871px;
+  left: 640px;
+  width: 660px;
+  height: 110px;
+}
+.div15 {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 1080px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-13xl);
+  color: var(--color-black);
+  font-family: var(--font-manrope);
+}

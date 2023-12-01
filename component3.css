@@ -1,0 +1,55 @@
+.background-icon4,
+.triangle-1-icon4,
+.triangle-2-icon4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1920px;
+  height: 1080px;
+  object-fit: cover;
+}
+.triangle-1-icon4,
+.triangle-2-icon4 {
+  width: 500px;
+  height: 500px;
+}
+.triangle-2-icon4 {
+  top: 830px;
+  left: 1670px;
+  width: 250px;
+  height: 250px;
+}
+.button-1,
+.button-3,
+.icon {
+  position: absolute;
+  top: 11px;
+  left: 1698px;
+  width: 200px;
+  height: 200px;
+}
+.icon {
+  object-fit: cover;
+}
+.button-1,
+.button-3 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  background-image: url(./public/button6@2x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+.button-1 {
+  left: 1458px;
+  background-image: url(./public/button1@2x.png);
+}
+.div12 {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 1080px;
+  overflow: hidden;
+}

@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  /* fonts */
+  --font-manrope: Manrope;
+
+  /* font sizes */
+  --font-size-29xl: 48px;
+  --font-size-5xl: 24px;
+  --font-size-13xl: 32px;
+  --font-size-45xl: 64px;
+
+  /* Colors */
+  --color-white: #fff;
+  --color-darkslateblue: #082567;
+  --color-black: #000;
+  --color-mediumslateblue: #0066ff;
+
+  /* Border radiuses */
+  --br-xl: 20px;
+  --br-3xs: 10px;
+}
