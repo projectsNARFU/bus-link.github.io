@@ -44,7 +44,7 @@
   box-sizing: border-box;
   width: 700px;
   height: 100px;
-    font-size: large;
+    font-size: xxx-large;
   position: relative;
 }
 .rectangle-again-password {
@@ -64,7 +64,7 @@
   box-sizing: border-box;
   width: 700px;
   height: 100px;
-  font-size: large;
+  font-size: xxx-large;
   position: absolute;
 }
 .confirm1 {
