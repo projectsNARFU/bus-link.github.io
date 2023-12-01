@@ -32,7 +32,7 @@
   width: 700px;
   height: 100px;
   font-size: large;
-  position: relative;
+  position: absolute;
 }
 .rectangle-password {
   top: 600px;

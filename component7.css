@@ -65,7 +65,7 @@
   width: 700px;
   height: 100px;
   font-size: large;
-  position: relative;
+  position: absolute;
 }
 .confirm1 {
   position: absolute;
