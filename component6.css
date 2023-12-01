@@ -44,6 +44,8 @@
   box-sizing: border-box;
   width: 700px;
   height: 100px;
+  font-size: large;
+  position: relative;
 }
 .div19 {
   position: absolute;
@@ -61,6 +63,8 @@
   box-sizing: border-box;
   width: 700px;
   height: 100px;
+  font-size: large;
+  position: relative;
 }
 .rectangle-password-reg {
   top: 553px;
@@ -86,6 +90,8 @@
   box-sizing: border-box;
   width: 700px;
   height: 100px;
+  font-size: large;
+  position: relative;
 }
 .register {
   position: absolute;

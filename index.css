@@ -25,13 +25,14 @@
 .rectangle-password {
   border: 3px solid var(--color-black);
   background-color: var(--color-white);
-  position: absolute;
   top: 419px;
   left: 610px;
   border-radius: var(--br-3xs);
   box-sizing: border-box;
   width: 700px;
   height: 100px;
+  font-size: large;
+  position: relative;
 }
 .rectangle-password {
   top: 600px;

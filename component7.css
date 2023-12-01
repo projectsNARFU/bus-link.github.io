@@ -38,13 +38,14 @@
 .rectangle-new-password {
   border: 3px solid var(--color-black);
   background-color: var(--color-white);
-  position: absolute;
   top: 464px;
   left: 610px;
   border-radius: var(--br-3xs);
   box-sizing: border-box;
   width: 700px;
   height: 100px;
+    font-size: large;
+  position: relative;
 }
 .rectangle-again-password {
   top: 645px;
@@ -63,6 +64,8 @@
   box-sizing: border-box;
   width: 700px;
   height: 100px;
+  font-size: large;
+  position: relative;
 }
 .confirm1 {
   position: absolute;
