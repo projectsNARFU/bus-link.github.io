@@ -10,44 +10,46 @@
 }
 .triangle-1-icon2,
 .triangle-2-icon2 {
-  width: 500px;
-  height: 500px;
+  width: 300px;
+  height: 300px;
 }
 .triangle-2-icon2 {
-  top: 830px;
-  left: 1670px;
-  width: 250px;
-  height: 250px;
+  top: 930px;
+  left: 1770px;
+  width: 150px;
+  height: 150px;
 }
 .div7 {
   position: absolute;
-  top: 215px;
-  left: 589px;
-  font-size: var(--font-size-45xl);
+  top: 312px;
+  left: 682px;
 }
 .div8,
 .rectangle-your-mail {
   position: absolute;
-  top: 332px;
-  left: 610px;
+  left: 760px;
+}
+.div8 {
+  top: 448px;
+  font-size: var(--font-size-xl);
 }
 .rectangle-your-mail {
-  border: 3px solid var(--color-black);
+  border: 2px solid var(--color-black);
   background-color: var(--color-white);
-  top: 376px;
+  top: 475px;
   border-radius: var(--br-3xs);
   box-sizing: border-box;
-  width: 700px;
-  height: 100px;
-  font-size: xxx-large;
-  position: absolute;
+  width: 400px;
+  height: 55px;
+  font-size: large;
 }
 .div9 {
-  top: 558px;
-  left: 488px;
+  top: 576px;
+  left: 608px;
+  font-size: var(--font-size-5xl);
   text-align: center;
   display: inline-block;
-  width: 944px;
+  width: 705px;
 }
 .confirm,
 .div10,
@@ -59,16 +61,19 @@
   left: 0;
   border-radius: var(--br-xl);
   background-color: var(--color-darkslateblue);
-  width: 440px;
-  height: 110px;
+  width: 282px;
+  height: 81px;
 }
 .div10 {
-  top: 22px;
-  left: 68px;
-  font-size: var(--font-size-29xl);
+  top: 19px;
+  left: 40px;
+  font-size: var(--font-size-13xl);
   font-family: var(--font-manrope);
   color: var(--color-white);
   text-align: left;
+  display: inline-block;
+  width: 203px;
+  height: 43px;
 }
 .confirm-button {
   cursor: pointer;
@@ -76,10 +81,10 @@
   padding: 0;
   background-color: transparent;
   position: absolute;
-  top: 748px;
-  left: 740px;
-  width: 440px;
-  height: 110px;
+  top: 688px;
+  left: 819px;
+  width: 282px;
+  height: 81px;
 }
 .div6 {
   position: relative;
@@ -88,7 +93,7 @@
   height: 1080px;
   overflow: hidden;
   text-align: left;
-  font-size: var(--font-size-13xl);
+  font-size: var(--font-size-29xl);
   color: var(--color-black);
   font-family: var(--font-manrope);
 }

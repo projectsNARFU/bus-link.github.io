@@ -8,10 +8,11 @@ body {
   --font-manrope: Manrope;
 
   /* font sizes */
+  --font-size-13xl: 32px;
+  --font-size-base: 16px;
+  --font-size-xl: 20px;
   --font-size-29xl: 48px;
   --font-size-5xl: 24px;
-  --font-size-13xl: 32px;
-  --font-size-45xl: 64px;
 
   /* Colors */
   --color-white: #fff;

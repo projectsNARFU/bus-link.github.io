@@ -10,87 +10,84 @@
 }
 .triangle-1-icon7,
 .triangle-2-icon7 {
-  width: 500px;
-  height: 500px;
+  width: 300px;
+  height: 300px;
 }
 .triangle-2-icon7 {
-  top: 830px;
-  left: 1670px;
-  width: 250px;
-  height: 250px;
+  top: 930px;
+  left: 1770px;
+  width: 150px;
+  height: 150px;
 }
 .div16 {
   position: absolute;
-  top: 92px;
-  left: 763px;
-  font-size: var(--font-size-45xl);
+  top: 245px;
+  left: 812px;
+  font-size: var(--font-size-29xl);
 }
 .div17,
 .div18,
 .rectangle-login-reg {
   position: absolute;
-  top: 344px;
-  left: 610px;
+  top: 419px;
+  left: 760px;
 }
 .div18,
 .rectangle-login-reg {
-  top: 509px;
+  top: 526px;
 }
 .rectangle-login-reg {
-  border: 3px solid var(--color-black);
+  border: 2px solid var(--color-black);
   background-color: var(--color-white);
-  top: 388px;
+  top: 446px;
   border-radius: var(--br-3xs);
   box-sizing: border-box;
-  width: 700px;
-  height: 100px;
-  font-size: xxx-large;
-  position: absolute;
+  width: 400px;
+  height: 55px;
 }
 .div19 {
   position: absolute;
-  top: 179px;
-  left: 611px;
+  top: 313px;
+  left: 760px;
 }
 .rectangle-mail-2,
 .rectangle-password-reg {
-  border: 3px solid var(--color-black);
+  border: 2px solid var(--color-black);
   background-color: var(--color-white);
   position: absolute;
-  top: 223px;
-  left: 611px;
+  top: 340px;
+  left: 760px;
   border-radius: var(--br-3xs);
   box-sizing: border-box;
-  width: 700px;
-  height: 100px;
-  font-size: xxx-large;
+  width: 400px;
+  height: 55px;
+  font-size: large;
 }
 .rectangle-password-reg {
-  top: 553px;
-  left: 610px;
+  top: 555px;
 }
-.div20 {
+.div20,
+.div21 {
   position: absolute;
-  top: 674px;
-  left: 610px;
+  top: 631px;
+  left: 760px;
 }
-.div21,
-.rectangle-code {
-  position: absolute;
-  top: 1028px;
-  left: 973px;
+.div21 {
+  top: 1018px;
+  left: 1218px;
+  font-size: var(--font-size-5xl);
 }
 .rectangle-code {
-  border: 3px solid var(--color-black);
+  border: 2px solid var(--color-black);
   background-color: var(--color-white);
-  top: 718px;
-  left: 610px;
+  position: absolute;
+  top: 658px;
+  left: 760px;
   border-radius: var(--br-3xs);
   box-sizing: border-box;
-  width: 700px;
-  height: 100px;
-  font-size: xxx-large;
-  position: absolute;
+  width: 400px;
+  height: 55px;
+  font-size: large;
 }
 .register {
   position: absolute;
@@ -98,14 +95,14 @@
   left: 0;
   border-radius: var(--br-xl);
   background-color: var(--color-darkslateblue);
-  width: 660px;
-  height: 110px;
+  width: 360px;
+  height: 81px;
 }
 .div22 {
   position: absolute;
-  top: 22px;
-  left: 89px;
-  font-size: var(--font-size-29xl);
+  top: 18px;
+  left: 20px;
+  font-size: var(--font-size-13xl);
   font-family: var(--font-manrope);
   color: var(--color-white);
   text-align: left;
@@ -116,10 +113,10 @@
   padding: 0;
   background-color: transparent;
   position: absolute;
-  top: 871px;
-  left: 640px;
-  width: 660px;
-  height: 110px;
+  top: 754px;
+  left: 780px;
+  width: 360px;
+  height: 81px;
 }
 .div15 {
   position: relative;
@@ -128,7 +125,7 @@
   height: 1080px;
   overflow: hidden;
   text-align: left;
-  font-size: var(--font-size-13xl);
+  font-size: var(--font-size-xl);
   color: var(--color-black);
   font-family: var(--font-manrope);
 }

@@ -10,14 +10,14 @@
 }
 .triangle-1-icon6,
 .triangle-2-icon6 {
-  width: 500px;
-  height: 500px;
+  width: 300px;
+  height: 300px;
 }
 .triangle-2-icon6 {
-  top: 830px;
-  left: 1670px;
-  width: 250px;
-  height: 250px;
+  top: 930px;
+  left: 1770px;
+  width: 150px;
+  height: 150px;
 }
 .button-41,
 .button-51 {
@@ -27,19 +27,19 @@
   background-color: transparent;
   position: absolute;
   top: 11px;
-  left: 1698px;
-  width: 200px;
-  height: 200px;
+  left: 1847px;
+  width: 60px;
+  height: 60px;
   background-image: url(./public/button5@2x.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
 }
 .button-41 {
-  top: 26px;
-  left: 1458px;
-  width: 170px;
-  height: 170px;
+  top: 15px;
+  left: 1777px;
+  width: 50px;
+  height: 50px;
   background-image: url(./public/button4@2x.png);
 }
 .div14 {
