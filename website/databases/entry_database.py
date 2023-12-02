@@ -110,14 +110,14 @@ if __name__ == '__main__':
     
     # insert_bus(42)
     
-    # insert_route(1, 3, 1)
-    # insert_route(1, 1, 2)
-    # insert_route(1, 2, 3)
-    # insert_route(1, 4, 4)
+    insert_route(id_route=1, id_bus_stop=3, serial_num_bustop=1)
+    insert_route(id_route=1, id_bus_stop=1, serial_num_bustop=2)
+    insert_route(id_route=1, id_bus_stop=5, serial_num_bustop=3)
+    insert_route(id_route=1, id_bus_stop=4, serial_num_bustop=4)
 
     # insert_bus_trip(1, 1, 3, '8:00', 1, 1)
     # insert_bus_trip(1, 1, 1, '8:10', 1, 1)
     # insert_bus_trip(1, 1, 2, '8:20', 1, 1)
     # insert_bus_trip(1, 1, 4, '8:30', 1, 1)
-    add_new_route([3, 1, 2, 4])
+    # add_new_route([3, 1, 2, 4])
     pass
