@@ -5,33 +5,38 @@ from init_db import *
 """
 добавление записей (чисто руками пока что)
 """
-# BusStop.create(number_people=7, bus_stop_name='vorona',
+# BusStop.create(bus_stop_name='vorona',
 #                 coords='123.21.1')
-# BusStop.create(number_people=10, bus_stop_name='volk',
+# BusStop.create(bus_stop_name='volk',
 #                 coords='100.8.8')
-# BusStop.create(number_people=1, bus_stop_name='zayats',
+# BusStop.create(bus_stop_name='zayats',
 #                 coords='112.75.82')
-# BusStop.create(number_people=7, bus_stop_name='sobaka',
+# BusStop.create(bus_stop_name='sobaka',
 #                 coords='150.2.1')
-# BusStop.create(number_people=5, bus_stop_name='koshka',
+# BusStop.create(bus_stop_name='koshka',
 #                 coords='170.44.1')
 # Driver.create(full_name='ivanov ivan ivanovich', email='ivanovich1980@mail.ru',
 #                 password='qwerty')
 # Bus.create(bus_number=42)
 
-# Route.create(id_route=1, id_bus_stop=3, serial_num_bustop=1, distance_previous_busstop=0)
-# Route.create(id_route=1, id_bus_stop=1, serial_num_bustop=2, distance_previous_busstop=0.8)
-# Route.create(id_route=1, id_bus_stop=2, serial_num_bustop=3, distance_previous_busstop=0.5)
-# Route.create(id_route=1, id_bus_stop=4, serial_num_bustop=4, distance_previous_busstop=0.5)
+# Route.create(id_route=1, id_bus_stop=6, serial_num_bustop=1, distance_previous_busstop=0)
+# Route.create(id_route=1, id_bus_stop=7, serial_num_bustop=2, distance_previous_busstop=0.8)
+# Route.create(id_route=1, id_bus_stop=9, serial_num_bustop=3, distance_previous_busstop=0.5)
+# Route.create(id_route=1, id_bus_stop=10, serial_num_bustop=4, distance_previous_busstop=0.5)
 
-# BusTrip.create(id_trip=1, id_route=1, id_bus_stop=3, actual_arrival_time='8:00',
-#                 real_arrival_time='8:00', id_driver=1, id_bus=1)
-# BusTrip.create(id_trip=1, id_route=1, id_bus_stop=1, actual_arrival_time='8:10',
-#                 real_arrival_time='8:10', id_driver=1, id_bus=1)
-# BusTrip.create(id_trip=1, id_route=1, id_bus_stop=2, actual_arrival_time='8:20',
-#                 real_arrival_time='8:20', id_driver=1, id_bus=1)
-# BusTrip.create(id_trip=1, id_route=1, id_bus_stop=4, actual_arrival_time='8:30',
-#                 real_arrival_time='8:30', id_driver=1, id_bus=1)
+# Route.create(id_route=2, id_bus_stop=6, serial_num_bustop=1, distance_previous_busstop=0)
+# Route.create(id_route=2, id_bus_stop=7, serial_num_bustop=3, distance_previous_busstop=0.8)
+# Route.create(id_route=2, id_bus_stop=9, serial_num_bustop=2, distance_previous_busstop=0.5)
+# Route.create(id_route=2, id_bus_stop=10, serial_num_bustop=4, distance_previous_busstop=0.5)
+
+# BusTrip.create(id_trip=1, id_route=1, id_bus_stop=6, actual_arrival_time='8:00',
+#                 real_arrival_time='8:00', id_driver=1, id_bus=3)
+# BusTrip.create(id_trip=1, id_route=1, id_bus_stop=7, actual_arrival_time='8:10',
+#                 real_arrival_time='8:10', id_driver=1, id_bus=3)
+# BusTrip.create(id_trip=1, id_route=1, id_bus_stop=9, actual_arrival_time='8:20',
+#                 real_arrival_time='8:20', id_driver=1, id_bus=3)
+# BusTrip.create(id_trip=1, id_route=1, id_bus_stop=10, actual_arrival_time='8:30',
+#                 real_arrival_time='8:30', id_driver=1, id_bus=3)
 
 """
 изменение записей

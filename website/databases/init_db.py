@@ -12,7 +12,7 @@ class BaseModel(Model):
 
 class BusStop(BaseModel):
     id_bus_stop = AutoField()
-    number_people = IntegerField(null=False)
+    number_people = IntegerField(null=False , default=0)
     bus_stop_name = TextField(null=False, unique=True)
     coords = TextField(null=False, unique=True)
     class Meta:
