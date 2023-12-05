@@ -16,7 +16,6 @@ Desktop.ini # Windows desktop icon settings
 *.temp  # Temporary files
 *.cache   # Cache files
 *.bak   # Backup files
-*.pyc   # Temporary files
 
 # Others
 *.log   # Log files

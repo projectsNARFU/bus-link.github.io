@@ -1,23 +1,29 @@
-.background-icon1,
-.triangle-1-icon1,
-.triangle-2-icon1 {
-  position: absolute;
-  top: 0;
-  left: 0;
+.background-icon {
+  position: relative;
   width: 1920px;
   height: 1080px;
   object-fit: cover;
+  z-index: 0;
 }
-.triangle-1-icon1,
-.triangle-2-icon1 {
-  width: 300px;
-  height: 300px;
+.triangle-1-icon,
+.triangle-2-icon {
+  position: absolute;
+  margin: 0 !important;
+  object-fit: cover;
 }
-.triangle-2-icon1 {
-  top: 930px;
-  left: 1770px;
+.triangle-1-icon {
+  top: 0;
+  left: 0;
   width: 150px;
   height: 150px;
+  z-index: 1;
+}
+.triangle-2-icon {
+  right: 0;
+  bottom: 0;
+  width: 100px;
+  height: 100px;
+  z-index: 2;
 }
 .button-4,
 .button-6 {
@@ -26,48 +32,67 @@
   padding: 0;
   background-color: transparent;
   position: absolute;
+  margin: 0 !important;
   top: 16px;
-  left: 1811px;
+  right: 19px;
   width: 90px;
   height: 90px;
   background-image: url(./public/button4@2x.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
+  z-index: 3;
 }
 .button-6 {
   top: 11px;
-  left: 1687px;
+  right: 133px;
   width: 100px;
   height: 100px;
   background-image: url(./public/button6@2x.png);
+  z-index: 4;
 }
-.map-space,
 .route-space {
-  position: absolute;
-  top: 120px;
-  left: 200px;
+  top: calc(50% - 420px);
+  left: calc(50% - 760px);
   background-color: var(--color-white);
   border: 3px solid var(--color-darkslateblue);
   box-sizing: border-box;
   width: 390px;
   height: 900px;
+  z-index: 5;
+}
+.div4,
+.map-space,
+.route-space {
+  position: absolute;
+  margin: 0 !important;
 }
 .map-space {
-  left: 600px;
+  top: calc(50% - 420px);
+  left: calc(50% - 360px);
+  background-color: var(--color-white);
+  border: 3px solid var(--color-darkslateblue);
+  box-sizing: border-box;
   width: 1200px;
+  height: 900px;
+  z-index: 6;
 }
-.div7 {
-  position: absolute;
+.div4 {
   top: 28px;
-  left: 839px;
+  left: calc(50% - 121px);
+  z-index: 7;
 }
-.div6 {
+.div3 {
   position: relative;
   background-color: var(--color-white);
   width: 100%;
   height: 1080px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-3xs);
   text-align: left;
   font-size: var(--font-size-29xl);
   color: var(--color-darkslateblue);

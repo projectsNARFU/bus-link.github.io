@@ -1,23 +1,29 @@
-.background-icon5,
-.triangle-1-icon5,
-.triangle-2-icon5 {
-  position: absolute;
-  top: 0;
-  left: 0;
+.background-icon4 {
+  position: relative;
   width: 1920px;
   height: 1080px;
   object-fit: cover;
+  z-index: 0;
 }
-.triangle-1-icon5,
-.triangle-2-icon5 {
-  width: 300px;
-  height: 300px;
+.triangle-1-icon4,
+.triangle-2-icon4 {
+  position: absolute;
+  margin: 0 !important;
+  object-fit: cover;
 }
-.triangle-2-icon5 {
-  top: 930px;
-  left: 1770px;
+.triangle-1-icon4 {
+  top: 0;
+  left: 0;
   width: 150px;
   height: 150px;
+  z-index: 1;
+}
+.triangle-2-icon4 {
+  right: 0;
+  bottom: 0;
+  width: 100px;
+  height: 100px;
+  z-index: 2;
 }
 .button-11,
 .button-2 {
@@ -34,53 +40,66 @@
 }
 .button-11 {
   position: absolute;
-  left: 1687px;
+  margin: 0 !important;
+  right: 133px;
   background-image: url(./public/button1@2x.png);
+  z-index: 3;
 }
 .button-2 {
-  left: 1807px;
+  right: 13px;
   background-image: url(./public/button2@2x.png);
+  z-index: 4;
 }
 .button-2,
-.div21,
+.div18,
 .map-1 {
   position: absolute;
+  margin: 0 !important;
 }
 .map-1 {
-  top: 120px;
-  left: 200px;
+  top: calc(50% - 420px);
+  left: calc(50% - 760px);
   background-color: var(--color-white);
   border: 3px solid var(--color-darkslateblue);
   box-sizing: border-box;
   width: 1600px;
   height: 900px;
+  z-index: 5;
 }
-.div21 {
+.div18 {
   top: 28px;
-  left: 933px;
+  left: calc(50% - 67px);
+  z-index: 6;
 }
-.div20 {
-  position: relative;
+.div17 {
   background-color: var(--color-white);
   width: 100%;
   height: 1080px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-3xs);
   text-align: left;
   font-size: var(--font-size-29xl);
   color: var(--color-darkslateblue);
   font-family: var(--font-manrope);
 }
-.div5 {
-  position: absolute;
-  top: calc(50% - 88px);
-  left: calc(50% - 87px);
-}
+.div17,
+.div2,
 .parent {
   position: relative;
+}
+.parent {
   background-color: var(--color-darkslateblue);
-  width: 348px;
-  height: 156px;
   overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 87px;
+  box-sizing: border-box;
   max-width: 90%;
   max-height: 90%;
   text-align: left;
