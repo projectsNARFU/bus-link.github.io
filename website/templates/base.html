@@ -1,1 +1,40 @@
-<!-- В будущем, шаблон для страниц, чтоб не писать одно и то же -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device=width, initial=scale=1" />
+    {% block head %}{% endblock %}
+    <title>{% block title %}Home{% endblock %}</title>
+    <title>Title</title>
+</head>
+<body>
+  <nav>
+    <button  
+      type="button" 
+      data-toggle="collapse" 
+      data-target="#navbar"
+    >
+      <span></span>
+    </button>
+      <div id="navbar">
+        <div>
+          <!-- этот navbar временный, чтобы легче переключаться
+          между страницами, на финале уже уберем -->
+        <a id="supervisor" href="/">supervisor</a>
+        <a id="trafficController" href="/traffic-controller">traffic controller</a>
+        <a id="driver" href="/driver">driver</a>
+        <a id="passenger" href="/passenger">passenger</a>
+        </div>
+      </div>
+    </nav>
+
+    <div>
+    {% block content%}
+    {% endblock %}
+    </div>
+
+    <script
+    type="text/javascript"
+    src="{{ url_for('static', filename='index.js') }}"></script>
+</body>
+</html>
