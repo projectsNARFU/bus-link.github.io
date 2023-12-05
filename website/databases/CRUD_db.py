@@ -1,5 +1,3 @@
-from hmac import new
-import select
 import psycopg2
 from peewee import *
 from init_db import *
@@ -219,7 +217,7 @@ def __add_route(bus_stop_list:list, default_route_id:int=-1):
         return False
     
     # не проверял, но вроде ок
-    cur_max = Route.select(fn.MAX(Route.id_trip)).scalar()
+    cur_max = Route.select(fn.MAX(Route.id_route)).scalar()
     if not cur_max:
         new_id = max(default_route_id, 1)
     elif default_route_id == -1:
@@ -371,28 +369,62 @@ def __add_trip(route_id:int, arrival_time:list, driver_id:int, bus_id:int, defau
                         real_arrival_time=arrival_time[cur_add_time], id_driver=driver_id, id_bus=bus_id)
         cur_add_time += 1
 
-def update_trip(trip_id:int, list_stop_id:list, list_act_time:list, list_real_time:list, driver_id:int=-1, bus_id:int=-1):
-    
+def update_trip(trip_id:int, list_stop_id:list=[], list_act_time:list=[], driver_id:int=-1, bus_id:int=-1):
+    """
+    обновление расписания рейса, изменение автобуса и водителя
+    назначенных на рейс. Вызывается из фронта.
+    """
     if not BusTrip.get_or_none(BusTrip.id_trip==trip_id):
         print(f'id:{trip_id} среди рейсов нет в бд')
         return False
-    return __update_busstop_trip()
-
-def __update_busstop_trip(trip_id:int, stop_id:int, act_time:str=None, real_time:str=None, driver_id:int=-1, bus_id:int=-1):
-    
-    choosed_route = BusTrip.select().where((BusTrip.id_trip==trip_id) & (BusTrip.id_bus_stop==stop_id))
-    if not choosed_route:
-        print(f'в выбраном рейсе {trip_id}, нет остановки {stop_id}')
-        return False
-
-    # ПРОВЕРКИ ТОГО, ЧТО РАСПИСАНИЯ ВВЕДЕНЫ КОРРЕКТНО
-
+    # print(len(BusTrip.select().where(BusTrip.id_trip == trip_id)[:]))
+    trip = BusTrip.select().where(BusTrip.id_trip == trip_id)
+    for par in [list_stop_id, list_act_time]:
+        if len(par) > len(trip[:]):
+            print(f'в списке {par} введено больше значений, чем находится в маршруте')
+            return False
     if (driver_id!=-1) and (not Driver.get_or_none(Driver.id_driver==driver_id)):
         print(f'id:{driver_id} среди водителей нет в бд')
         return False
     if (bus_id!=-1) and (not Bus.get_or_none(Bus.id_bus==bus_id)):
         print(f'id:{bus_id} среди автобусов нет в бд')
         return False
+    
+    if driver_id != -1:
+        driver_id = driver_id
+    else:
+        driver_id = trip[0].id_driver
+    if bus_id != -1:
+        bus_id = bus_id
+    else:
+        bus_id = trip[0].id_bus
+    for i in range(len(list_stop_id)):
+        __update_busstop_trip(trip_id=trip_id, stop_id=list_stop_id[i],
+                                 act_time=list_act_time[i], real_time=list_act_time[i],
+                                 driver_id=driver_id, bus_id=bus_id)
+
+def __update_busstop_trip(trip_id:int, stop_id:int, act_time:str=None, real_time:str=None, driver_id:int=-1, bus_id:int=-1):
+    """
+    Обновление информации по одной остановке в маршруте.
+    это внутренняя функция, расчитанная на изменение актуального времени
+    и реального времени (то есть подразумевается, что это функция используется
+    только в бекенде). Через эту функцию мы фиксируем несостыковку с
+    назначенным и реальным временем
+    """
+    choosed_route = BusTrip.select().where((BusTrip.id_trip==trip_id) & (BusTrip.id_bus_stop==stop_id))
+    if not choosed_route:
+        print(f'в выбраном рейсе {trip_id}, нет остановки {stop_id}')
+        return False
+    if (driver_id!=-1) and (not Driver.get_or_none(Driver.id_driver==driver_id)):
+        print(f'id:{driver_id} среди водителей нет в бд')
+        return False
+    if (bus_id!=-1) and (not Bus.get_or_none(Bus.id_bus==bus_id)):
+        print(f'id:{bus_id} среди автобусов нет в бд')
+        return False
+    
+    
+
+    # ПРОВЕРКИ ТОГО, ЧТО РАСПИСАНИЯ ВВЕДЕНЫ КОРРЕКТНО
     
     if act_time:
         act_time = act_time
@@ -410,31 +442,37 @@ def __update_busstop_trip(trip_id:int, stop_id:int, act_time:str=None, real_time
         bus_id = bus_id
     else:
         bus_id = choosed_route[0].id_bus
-    changed_object = BusTrip.update({BusTrip.actual_arrival_time:act_time, BusTrip.real_arrival_time:real_time,
-                                        BusTrip.id_driver:driver_id, BusTrip.id_bus:bus_id}).where(
+
+    changed_object = BusTrip.update({BusTrip.actual_arrival_time:act_time, 
+                                     BusTrip.real_arrival_time:real_time,
+                                     BusTrip.id_driver:driver_id,
+                                     BusTrip.id_bus:bus_id}).where(
             (BusTrip.id_trip==trip_id) & (BusTrip.id_bus_stop==stop_id))
     changed_object.execute()
     return True
 
 if __name__ == '__main__':
-    # add_bus_stop(61, '125.64')
+    # add_bus_stop('stoyanka', '150.64')
     # test_bus_stop = {'id_bus_stop': 17, 'coords': '228.228'}
     # update_bus_stop(test_bus_stop)
     # delete_bus_stop(9)
-    # add_bus(1)
+    # add_bus(9)
     # test_bus = {'id_bus': 2, 'bus_number': 76}
     # update_bus(test_bus)
     # delete_bus(3)
-    # add_driver('zubenko mikhail petrovich', 'mafioznik@mail.ru', 'gangstaVlast')
+    # add_driver('ivanov ivan ivanovich', 'ivanov1980@mail.ru', 'qwerty123')
     # test_driver = {'id_driver': 1, 'password': 'fhdusSD12'}
     # update_driver(test_driver)
     # delete_driver(1234)
-    # add_route([6, 7, 10, 22])
+    # add_route([1, 2, 3, 4])
     # update_busstop_route(2, 7, 1)
     # update_busstop_route(1, 7, 2)
     # delete_route(1)
     # delete_busstop_route(2, 7)
     # test_time = ['8:30', '8:40', '8:50', '9:05']
-    # add_trip(2, test_time, 1, 1)
-    # __update_busstop_trip(trip_id=2, stop_id=7, act_time='8:45', real_time='8:45')
+    # add_trip(1, test_time, 1, 1)
+    # __update_busstop_trip(trip_id=1, stop_id=2, act_time='8:45', real_time='8:45')
+    update_trip(trip_id=1, list_stop_id=[1, 2, 3, 4], 
+                        list_act_time=['9:00', '9:15', '9:25', '9:35'],
+                        driver_id=2, bus_id=2)
     pass
