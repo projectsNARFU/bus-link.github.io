@@ -1,13 +1,23 @@
 from flask import Blueprint, render_template, render_template_string, request, flash, jsonify
 from flask_login import login_required, current_user
 import folium
-from . import db
+import psycopg2
+# from . import db
 import json
 
 
 """
 файл с основными путями страниц
 """
+
+def get_db_connection():
+    conn = psycopg2.connect(
+            host='localhost',
+            dbname='postgres',
+            user='postgres',
+            password='qwer',
+            port='5432')
+    return conn
 
 
 views = Blueprint('views', __name__)
@@ -49,8 +59,17 @@ def traffic_controller():
 
 @views.route('/traffic-controller/chat', methods=['GET', 'POST'])
 def traffic_controller_chat():
-    test_list_drivers = ['vanya', 'dima', 'bob']
-    return render_template("traffic_controller_chat.html", user=current_user, drivers=test_list_drivers)
+    # test_list_drivers = ['vanya', 'dima', 'bob']
+
+    conn = get_db_connection()
+    cur = conn.cursor()
+    cur.execute('SELECT * FROM drivers;')
+    drivers = cur.fetchall()
+    cur.close()
+    conn.close()
+    print(drivers)
+
+    return render_template("traffic_controller_chat.html", user=current_user, drivers=drivers)
 
 
 @views.route('/driver', methods=['GET', 'POST'])

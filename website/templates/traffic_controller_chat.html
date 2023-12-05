@@ -1,20 +1,10 @@
-{% extends "base.html" %} {% block title %}Traffic controller{% endblock %}
+{% extends "base.html" %} {% block title %}Traffic controller - chat{% endblock %}
 
-{% block content%}
-<h1 align="center">Я ЧАТ</h1>
-
-<div>
-<ul>
-    {% for driver in drivers %}
-    <li>
-        <form>
-        <button type="button">{{driver}}</button>
-        <p>Звонок</p>
-        </form>
-    </li>
-    {% endfor %}
-</ul>
-</div>
-
-<button>Связь с экстренными службами</button>
+{% block content %}
+{% for driver in drivers %}
+    <div class='book'>
+        <h3>#{{ driver[0] }} - {{driver[1]}}</h3>
+        <p class='review'>{{ driver[2] }}</p>
+    </div>
+{% endfor %}
 {% endblock %}
