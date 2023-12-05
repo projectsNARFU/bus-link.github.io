@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Traffic controller</title>
+    {{ header|safe }}
+    <script>
+        {{ script|safe }}
+    </script>
+{% endblock %}
+
+{% block content %}
+    <br />
+    <a id="supervisor" href="/traffic-controller/chat">chat with drivers</a>
+    <h1>Embed folium map in HTML page</h1>
+    {{ body_html|safe }}
+    <h3>This map is embeded in a flask server web page !</h3>
+    <div id="mapid" style="width: 600px; height: 400px;"></div>  <div id="mapid" style="width: 400px; height: 100px;"></div>
+
+    <button id="emergency">Связь с экстренными службами</button>
+    <button id="updateBusLocation">Узнать где сейчас автобус</button>
+
+    <script>
+        // Добавляем обработчик события клика на кнопку "Узнать где сейчас автобус"
+        document.getElementById('updateBusLocation').addEventListener('click', function() {
+            fetch('/update_marker', {
+                method: 'POST',
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Проверяем, что координаты маркера получены
+                if (data && data.lat && data.lng) {
+                    // Очищаем старую метку и добавляем новую метку на карту с обновленными координатами
+                    markerLayer.clearLayers();
+                    L.marker([data.lat, data.lng]).addTo(markerLayer);
+                } else {
+                    console.error('Произошла ошибка: координаты маркера не получены');
+                }
+            })
+            .catch(error => {
+                console.error('Произошла ошибка при получении новых координат маркера:', error);
+            });
+        });
+    </script>
+{% endblock %}
