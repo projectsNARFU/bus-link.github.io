@@ -96,6 +96,7 @@
   box-sizing: border-box;
   width: 1020px;
   height: 55px;
+  font-size: large;
 }
 .send-button {
   cursor: pointer;

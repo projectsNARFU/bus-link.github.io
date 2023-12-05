@@ -32,6 +32,7 @@
   box-sizing: border-box;
   width: 400px;
   height: 55px;
+  font-size: large;
 }
 .rectangle-password {
   top: 569px;
