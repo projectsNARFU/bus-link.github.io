@@ -1,18 +1,13 @@
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-from os import path
-# from . import initialization_db
+# from flask_sqlalchemy import SQLAlchemy
+# from os import path
+from .databases.init_db import *
 # from flask_login import LoginManager
 
 
 """
 Инициализируется всегда, когда программа открывает папку website
 """
-
-
-"""ЗАМЕНИТЬ НА НОРМ ДБ"""
-# db = SQLAlchemy()
-# DB_NAME = "database.db"
 
 
 def create_app():
@@ -31,7 +26,7 @@ def create_app():
     # app.register_blueprint(auth, url_prefix='/')
 
     # create_databases(app)
-    # initialization_db()
+    db.create_tables([BusStop, Bus, Driver, Route, BusTrip])
 
     return app
 

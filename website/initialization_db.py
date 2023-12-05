@@ -1,4 +1,3 @@
-from ast import main
 import psycopg2
 
 def get_db_connection():
