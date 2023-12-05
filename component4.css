@@ -25,24 +25,66 @@
   border: 0;
   padding: 0;
   background-color: transparent;
-  position: absolute;
   top: 11px;
-  left: 1777px;
-  width: 60px;
-  height: 60px;
-  background-image: url(./public/button1@2x.png);
+  width: 100px;
+  height: 100px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
 }
+.button-11 {
+  position: absolute;
+  left: 1687px;
+  background-image: url(./public/button1@2x.png);
+}
 .button-2 {
-  left: 1847px;
+  left: 1807px;
   background-image: url(./public/button2@2x.png);
 }
-.div13 {
+.button-2,
+.div21,
+.map-1 {
+  position: absolute;
+}
+.map-1 {
+  top: 120px;
+  left: 200px;
+  background-color: var(--color-white);
+  border: 3px solid var(--color-darkslateblue);
+  box-sizing: border-box;
+  width: 1600px;
+  height: 900px;
+}
+.div21 {
+  top: 28px;
+  left: 933px;
+}
+.div20 {
   position: relative;
   background-color: var(--color-white);
   width: 100%;
   height: 1080px;
   overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-29xl);
+  color: var(--color-darkslateblue);
+  font-family: var(--font-manrope);
+}
+.div5 {
+  position: absolute;
+  top: calc(50% - 88px);
+  left: calc(50% - 87px);
+}
+.parent {
+  position: relative;
+  background-color: var(--color-darkslateblue);
+  width: 348px;
+  height: 156px;
+  overflow: hidden;
+  max-width: 90%;
+  max-height: 90%;
+  text-align: left;
+  font-size: 128px;
+  color: var(--color-white);
+  font-family: var(--font-manrope);
 }

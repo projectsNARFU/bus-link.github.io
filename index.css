@@ -32,7 +32,6 @@
   box-sizing: border-box;
   width: 400px;
   height: 55px;
-  font-size: large;
 }
 .rectangle-password {
   top: 569px;
@@ -110,7 +109,7 @@
   height: 81px;
 }
 .div4 {
-  top: 19px;
+  top: calc(50% - 21.5px);
   left: 58px;
   font-size: var(--font-size-13xl);
   font-family: var(--font-manrope);

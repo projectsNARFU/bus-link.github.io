@@ -14,7 +14,7 @@
     />
   </head>
   <body>
-    <div class="div12">
+    <div class="div18">
       <img class="background-icon4" alt="" src="./public/background@2x.png" />
 
       <img class="triangle-1-icon4" alt="" src="./public/triangle-1@2x.png" />
@@ -22,7 +22,23 @@
       <img class="triangle-2-icon4" alt="" src="./public/triangle-2@2x.png" />
 
       <button class="button-3" id="button3"></button>
-      <button class="button-1"></button>
+      <button class="button-1" id="button1"></button>
+      <div class="drivers"></div>
+      <div class="chat"></div>
+      <div class="name-stroke">
+        <div class="name-2"></div>
+        <div class="name-1"></div>
+      </div>
+      <input class="message" type="text" />
+
+      <button class="send-button"></button>
+      <div class="div19">Чат</div>
+    </div>
+
+    <div id="framePopup" class="popup-overlay" style="display: none">
+      <div class="parent">
+        <div class="div5">112</div>
+      </div>
     </div>
 
     <script>
@@ -30,6 +46,32 @@
       if (button3) {
         button3.addEventListener("click", function (e) {
           window.location.href = "./component4.html";
+        });
+      }
+      
+      var button1 = document.getElementById("button1");
+      if (button1) {
+        button1.addEventListener("click", function () {
+          var popup = document.getElementById("framePopup");
+          if (!popup) return;
+          var popupStyle = popup.style;
+          if (popupStyle) {
+            popupStyle.display = "flex";
+            popupStyle.zIndex = 100;
+            popupStyle.backgroundColor = "rgba(113, 113, 113, 0.3)";
+            popupStyle.alignItems = "flex-end";
+            popupStyle.justifyContent = "";
+          }
+          popup.setAttribute("closable", "");
+      
+          var onClick =
+            popup.onClick ||
+            function (e) {
+              if (e.target === popup && popup.hasAttribute("closable")) {
+                popupStyle.display = "none";
+              }
+            };
+          popup.addEventListener("click", onClick);
         });
       }
       </script>

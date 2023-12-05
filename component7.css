@@ -19,19 +19,19 @@
   width: 150px;
   height: 150px;
 }
-.div24 {
+.div33 {
   position: absolute;
   top: 273px;
   left: 682px;
   font-size: var(--font-size-29xl);
 }
-.div25,
-.div26 {
+.div34,
+.div35 {
   position: absolute;
   top: 473px;
   left: 760px;
 }
-.div26 {
+.div35 {
   top: 586px;
 }
 .rectangle-again-password,
@@ -45,12 +45,11 @@
   box-sizing: border-box;
   width: 400px;
   height: 55px;
-  font-size: large;
 }
 .rectangle-again-password {
   top: 613px;
 }
-.div27,
+.div36,
 .rectangle-mail-1 {
   position: absolute;
   top: 362px;
@@ -74,9 +73,9 @@
   width: 282px;
   height: 81px;
 }
-.div28 {
+.div37 {
   position: absolute;
-  top: 19px;
+  top: calc(50% - 21.5px);
   left: 40px;
   font-size: var(--font-size-13xl);
   font-family: var(--font-manrope);
@@ -97,7 +96,7 @@
   width: 282px;
   height: 81px;
 }
-.div23 {
+.div32 {
   position: relative;
   background-color: var(--color-white);
   width: 100%;

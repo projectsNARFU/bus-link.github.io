@@ -1,0 +1,18 @@
+.div5 {
+  position: absolute;
+  top: calc(50% - 88px);
+  left: calc(50% - 87px);
+}
+.parent {
+  position: relative;
+  background-color: var(--color-darkslateblue);
+  width: 348px;
+  height: 156px;
+  overflow: hidden;
+  max-width: 90%;
+  max-height: 90%;
+  text-align: left;
+  font-size: 128px;
+  color: var(--color-white);
+  font-family: var(--font-manrope);
+}

@@ -19,31 +19,29 @@
   width: 150px;
   height: 150px;
 }
-.div7 {
+.div10,
+.div9 {
   position: absolute;
   top: 312px;
   left: 682px;
 }
-.div8,
-.rectangle-your-mail {
-  position: absolute;
-  left: 760px;
-}
-.div8 {
+.div10 {
   top: 448px;
+  left: 760px;
   font-size: var(--font-size-xl);
 }
 .rectangle-your-mail {
   border: 2px solid var(--color-black);
   background-color: var(--color-white);
+  position: absolute;
   top: 475px;
+  left: 760px;
   border-radius: var(--br-3xs);
   box-sizing: border-box;
   width: 400px;
   height: 55px;
-  font-size: large;
 }
-.div9 {
+.div11 {
   top: 576px;
   left: 608px;
   font-size: var(--font-size-5xl);
@@ -52,8 +50,8 @@
   width: 705px;
 }
 .confirm,
-.div10,
-.div9 {
+.div11,
+.div12 {
   position: absolute;
 }
 .confirm {
@@ -64,8 +62,8 @@
   width: 282px;
   height: 81px;
 }
-.div10 {
-  top: 19px;
+.div12 {
+  top: calc(50% - 21.5px);
   left: 40px;
   font-size: var(--font-size-13xl);
   font-family: var(--font-manrope);
@@ -86,7 +84,7 @@
   width: 282px;
   height: 81px;
 }
-.div6 {
+.div8 {
   position: relative;
   background-color: var(--color-white);
   width: 100%;

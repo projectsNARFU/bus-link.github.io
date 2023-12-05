@@ -19,20 +19,20 @@
   width: 150px;
   height: 150px;
 }
-.div16 {
+.div25 {
   position: absolute;
   top: 245px;
   left: 812px;
   font-size: var(--font-size-29xl);
 }
-.div17,
-.div18,
+.div26,
+.div27,
 .rectangle-login-reg {
   position: absolute;
   top: 419px;
   left: 760px;
 }
-.div18,
+.div27,
 .rectangle-login-reg {
   top: 526px;
 }
@@ -45,7 +45,7 @@
   width: 400px;
   height: 55px;
 }
-.div19 {
+.div28 {
   position: absolute;
   top: 313px;
   left: 760px;
@@ -61,18 +61,17 @@
   box-sizing: border-box;
   width: 400px;
   height: 55px;
-  font-size: large;
 }
 .rectangle-password-reg {
   top: 555px;
 }
-.div20,
-.div21 {
+.div29,
+.div30 {
   position: absolute;
   top: 631px;
   left: 760px;
 }
-.div21 {
+.div30 {
   top: 1018px;
   left: 1218px;
   font-size: var(--font-size-5xl);
@@ -87,7 +86,6 @@
   box-sizing: border-box;
   width: 400px;
   height: 55px;
-  font-size: large;
 }
 .register {
   position: absolute;
@@ -98,9 +96,9 @@
   width: 360px;
   height: 81px;
 }
-.div22 {
+.div31 {
   position: absolute;
-  top: 18px;
+  top: calc(50% - 22.5px);
   left: 20px;
   font-size: var(--font-size-13xl);
   font-family: var(--font-manrope);
@@ -118,7 +116,7 @@
   width: 360px;
   height: 81px;
 }
-.div15 {
+.div24 {
   position: relative;
   background-color: var(--color-white);
   width: 100%;
