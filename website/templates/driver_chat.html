@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <title>Chat</title>
+
+    <meta name="description" content="Driver's chat" />
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./driver_chat.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400&display=swap"
+    />
+  </head>
+  <body>
+    <div class="div5">
+      <img
+        class="background-mob-icon"
+        alt=""
+        src="./public/background-mob@2x.png"
+      />
+
+      <img class="triangle-3-icon" alt="" src="./public/triangle-3@2x.png" />
+
+      <img class="triangle-4-icon" alt="" src="./public/triangle-4@2x.png" />
+
+      <button class="button-8" id="button8"></button>
+      <div class="child"></div>
+      <input class="item" type="text" />
+
+      <button class="send-button"></button>
+      <div class="name-stroke">
+        <div class="name-stroke-child"></div>
+        <div class="name-stroke-item"></div>
+      </div>
+      <div class="div6">Чат</div>
+    </div>
+
+    <script>
+      var button8 = document.getElementById("button8");
+      if (button8) {
+        button8.addEventListener("click", function (e) {
+          window.location.href = "./driver_main_menu.html";
+        });
+      }
+      </script>
+  </body>
+</html>

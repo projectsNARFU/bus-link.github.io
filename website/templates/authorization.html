@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <title>Authorization</title>
+
+    <meta name="description" content="Authorization page" />
+    <link rel="stylesheet" href="../static/global.css" />
+    <link rel="stylesheet" href="../static/authorization.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400&display=swap"
+    />
+  </head>
+  <body>
+    <div class="div35">
+      <img class="background-icon8" alt="" src="../../public/background@2x.png" />
+
+      <img class="triangle-1-icon8" alt="" src="../../public/triangle-1@2x.png" />
+
+      <img class="triangle-2-icon8" alt="" src="../../public/triangle-2@2x.png" />
+
+      <div class="div36">Авторизация</div>
+      <div class="div37">Логин</div>
+      <div class="div38">Пароль</div>
+      <input class="rectangle-login-mob" type="text" />
+
+      <input class="rectangle-password-mob" type="password" />
+
+      <button class="button" id="button">Восстановление пароля</button>
+      <button class="button1" id="button1">Зарегистрироваться</button>
+      <div class="buslink">Первый раз в BusLink?</div>
+      <img class="logo-2-icon" alt="" src="../../public/logo-2@2x.png" />
+
+      <button class="enter-mob">
+        <div class="enter-mob1"></div>
+        <div class="div39">Войти</div>
+      </button>
+    </div>
+
+    <script>
+      var button = document.getElementById("button");
+      if (button) {
+        button.addEventListener("click", function (e) {
+          window.location.href = "./password_recovery_1.html";
+        });
+      }
+      
+      var button1 = document.getElementById("button1");
+      if (button1) {
+        button1.addEventListener("click", function (e) {
+          window.location.href = "./registration.html";
+        });
+      }
+      </script>
+  </body>
+</html>
