@@ -3,7 +3,7 @@
 {% block content%}
 <br />
 <div class="main_block">
-<form action="/add" method="POST">
+<form action="/addstop" method="POST">
     <label>Bus Stop Name</label>
     <input type="text" name="bus_stop_name">
     <label>Longitude</label>
@@ -12,5 +12,30 @@
     <input type="text" name="latitude" placeholder="">
     <button type="submit">Add</button>
 </form>
+<form action="/addbus" method="POST">
+    <label>Bus Number</label>
+    <input type="number" name="bus_number">
+    <button type="submit">Add</button>
+</form>
+<form action="/adddriver" method="POST">
+    <label>Driver Full Name</label>
+    <input type="text" name="driver_name">
+    <label>Driver Email</label>
+    <input type="text" name="driver_email">
+    <label>Driver Password</label>
+    <input type="text" name="driver_pass">
+    <button type="submit">Add</button>
+</form>
+<table>
+    <caption><b>Driver Stops</b></caption>
+    <thead>
+        <tr>
+            <tr>name</tr> <tr>longitude</tr> <tr>latitude</tr>
+        </tr>
+    </thead>
+    <tbody>
+        
+    </tbody>
+</table>
 </div>
 {% endblock %}

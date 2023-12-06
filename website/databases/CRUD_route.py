@@ -1,6 +1,6 @@
 import psycopg2
 from peewee import *
-from init_db import *
+from .init_db import *
 
 
 def calc_distance(prev_stop, cur_stop):

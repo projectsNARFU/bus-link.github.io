@@ -2,8 +2,11 @@ from flask import Blueprint, render_template, request, redirect, url_for
 from flask_login import login_required, current_user
 import folium
 import psycopg2
-from .databases.init_db import *
-from .databases.CRUD_bus_stop import *
+
+from website.databases.CRUD_bus import *
+from website.databases.CRUD_driver import *
+from website.databases.init_db import *
+from website.databases.CRUD_bus_stop import *
 # from . import db
 import json
 
@@ -92,18 +95,33 @@ def test():
     print(bus_stops.dicts().execute()[:])
     return render_template("input_test.html", bus_stops=bus_stops)
 
-
-@views.route('/success/<name>')
-def success(name):
-   return 'welcome %s' % name
-
-# function to add profiles
-@views.route('/add', methods=["POST"])
-def profile():
+# ADD BUS STOP
+@views.route('/addstop', methods=["POST"])
+def adding_bus_stop():
     if request.method == 'POST':
         bus_stop_name = request.form['bus_stop_name']
         longitude = request.form['longitude']
         latitude = request.form['latitude']
         add_bus_stop(bus_stop_name, longitude, latitude)
+
+        return redirect(url_for('views.traffic_controller'))
+    
+# ADD BUS
+@views.route('/addbus', methods=["POST"])
+def adding_bus():
+    if request.method == 'POST':
+        bus_number = request.form['bus_number']
+        add_bus(bus_number)
+
+        return redirect(url_for('views.traffic_controller'))
+
+# ADD DRIVER
+@views.route('/adddriver', methods=["POST"])
+def adding_driver():
+    if request.method == 'POST':
+        driver_name = request.form['driver_name']
+        driver_email = request.form['driver_email']
+        driver_pass = request.form['driver_pass']
+        add_driver(driver_name, driver_email, driver_pass)
 
         return redirect(url_for('views.traffic_controller'))
