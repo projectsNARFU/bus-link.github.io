@@ -1,10 +1,11 @@
-from flask import Blueprint, render_template, render_template_string, request, flash, jsonify
+from flask import Blueprint, render_template, request, redirect, url_for
 from flask_login import login_required, current_user
 import folium
 import psycopg2
+from .databases.init_db import *
+from .databases.CRUD_bus_stop import *
 # from . import db
 import json
-
 
 """
 файл с основными путями страниц
@@ -61,13 +62,16 @@ def traffic_controller():
 def traffic_controller_chat():
     # test_list_drivers = ['vanya', 'dima', 'bob']
 
-    conn = get_db_connection()
-    cur = conn.cursor()
-    cur.execute('SELECT * FROM drivers;')
-    drivers = cur.fetchall()
-    cur.close()
-    conn.close()
-    print(drivers)
+    drivers = BusStop.select().order_by(BusStop.id_bus_stop)
+    print(drivers.dicts().execute()[:])
+
+    # conn = get_db_connection()
+    # cur = conn.cursor()
+    # cur.execute('SELECT * FROM drivers;')
+    # drivers = cur.fetchall()
+    # cur.close()
+    # conn.close()
+    # print(drivers)
 
     return render_template("traffic_controller_chat.html", user=current_user, drivers=drivers)
 
@@ -80,3 +84,26 @@ def driver():
 @views.route('/passenger', methods=['GET', 'POST'])
 def passenger():
     return render_template("passenger.html", user=current_user)
+
+
+@views.route('/input_test', methods=['GET', 'POST'])
+def test():
+    bus_stops = BusStop.select().order_by(BusStop.id_bus_stop)
+    print(bus_stops.dicts().execute()[:])
+    return render_template("input_test.html", bus_stops=bus_stops)
+
+
+@views.route('/success/<name>')
+def success(name):
+   return 'welcome %s' % name
+
+# function to add profiles
+@views.route('/add', methods=["POST"])
+def profile():
+    if request.method == 'POST':
+        bus_stop_name = request.form['bus_stop_name']
+        longitude = request.form['longitude']
+        latitude = request.form['latitude']
+        add_bus_stop(bus_stop_name, longitude, latitude)
+
+        return redirect(url_for('views.traffic_controller'))

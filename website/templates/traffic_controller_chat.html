@@ -3,8 +3,8 @@
 {% block content %}
 {% for driver in drivers %}
     <div class='book'>
-        <h3>#{{ driver[0] }} - {{driver[1]}}</h3>
-        <p class='review'>{{ driver[2] }}</p>
+        <h3>#{{ driver['id_bus_stop'] }} - {{driver['bus_stop_name']}}</h3>
+        <p class='review'>{{ driver['number_people'] }}</p>
     </div>
 {% endfor %}
 {% endblock %}

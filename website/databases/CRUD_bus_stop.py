@@ -1,17 +1,19 @@
 import psycopg2
 from peewee import *
-from init_db import *
+# from init_db import * -- если вызывать отсюда
+from .init_db import *
 
 
-def add_bus_stop(name:str, coord:str):
+def add_bus_stop(name:str, longitude:float, latitude:float):
     """
     добавляем сущность автобусная остановка
     """
     # сделать условие на проверку вводимых данных
     name_exist = BusStop.get_or_none(BusStop.bus_stop_name==name)
-    coord_exist = BusStop.get_or_none(BusStop.coords==coord)
-    if not name_exist and not coord_exist:
-        busstop, created = BusStop.get_or_create(bus_stop_name=name, coords=coord)
+    longitude_exist = BusStop.get_or_none(BusStop.coord_longitude==longitude)
+    latitude_exist = BusStop.get_or_none(BusStop.coord_latitude==latitude)
+    if not name_exist and not longitude_exist and not latitude_exist:
+        busstop, created = BusStop.get_or_create(bus_stop_name=name, coord_longitude=longitude, coord_latitude=latitude)
 
 def update_bus_stop(values:dict):
     """
@@ -23,10 +25,13 @@ def update_bus_stop(values:dict):
 
         choosed_object = choosed_object.dicts().execute()[0]
         name = values.get('bus_stop_name', choosed_object['bus_stop_name'])
-        coord = values.get('coords', choosed_object['coords'])
+        longitude = values.get('coord_longitude', choosed_object['coord_longitude'])
+        latitude = values.get('coord_latitude', choosed_object['coord_latitude'])
 
         updated_object = BusStop.update(
-            {BusStop.bus_stop_name:name, BusStop.coords:coord}).where(
+            {BusStop.bus_stop_name:name, 
+             BusStop.coord_longitude:longitude, 
+             BusStop.coord_latitude:latitude}).where(
                 BusStop.id_bus_stop==entered_id)
         
         updated_object.execute()
@@ -61,8 +66,8 @@ def delete_bus_stop(stop_id:int):
     deleted_object.execute()
 
 if __name__ == '__main__':
-    # add_bus_stop('stoyanka', '150.64')
-    # test_bus_stop = {'id_bus_stop': 17, 'coords': '228.228'}
+    add_bus_stop('ostanovka', 150.86, 159.9)
+    # test_bus_stop = {'id_bus_stop': 17, 'coord_longitude': 222.233, 'coord_latitude': 90.8}
     # update_bus_stop(test_bus_stop)
     # delete_bus_stop(9)
     pass

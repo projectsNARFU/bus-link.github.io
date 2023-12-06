@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content%}
+<br />
+<div class="main_block">
+<form action="/add" method="POST">
+    <label>Bus Stop Name</label>
+    <input type="text" name="bus_stop_name">
+    <label>Longitude</label>
+    <input type="text" name= "longitude">
+    <label>Latitude</label>
+    <input type="text" name="latitude" placeholder="">
+    <button type="submit">Add</button>
+</form>
+</div>
+{% endblock %}

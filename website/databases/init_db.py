@@ -14,7 +14,8 @@ class BusStop(BaseModel):
     id_bus_stop = AutoField()
     number_people = IntegerField(null=False , default=0)
     bus_stop_name = TextField(null=False, unique=True)
-    coords = TextField(null=False, unique=True)
+    coord_longitude = FloatField(default=0)
+    coord_latitude = FloatField(default=0)
     class Meta:
         table_name = 'bus_stop'
 
@@ -68,6 +69,15 @@ class BusTrip(BaseModel):
         table_name = 'bus_trip'
         primary_key = CompositeKey('id_trip', 'id_bus_stop')
 
+    
+class RoutePath(BaseModel):
+    """"""
+    id_route_path = AutoField()
+    coord_longitude = FloatField(default=0)
+    coord_latitude = FloatField(default=0)
+    class Meta:
+        table_name = 'route_path'
+
 
 def init_dbs():
     """db.execute_sql() поможет ли?"""
@@ -99,4 +109,4 @@ def init_dbs():
 
 if __name__ == '__main__':
     # init_dbs()
-    db.create_tables([BusStop, Bus, Driver, Route, BusTrip])
+    db.create_tables([BusStop, Bus, Driver, Route, BusTrip, RoutePath])

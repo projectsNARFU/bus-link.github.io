@@ -7,12 +7,20 @@
 
 {% block content%}
 <br />
-<a id="supervisor" href="/traffic-controller/chat">chat with drivers</a>
-<h1>Embed folium map in HTML page</h1>
-{{ body_html|safe }}
-<h3>This map is embeded in a flask server web page !</h3>
-<script>
-    {{ script|safe }}
-</script>
+<div class="main_block">
+<div class="inline_block">
+    <a id="supervisor" href="/traffic-controller/chat">chat with drivers</a>
+    <h1>Embed folium map in HTML page</h1>
+    {{ body_html|safe }}
+    <h3>This map is embeded in a flask server web page !</h3>
+    <script>
+        {{ script|safe }}
+    </script>
+</div>
+<div class="inline_block">
+    <p>qwerrewqqwerreqw</p>
+    <button>test</button>
+</div>
+</div>
 <button>Связь с экстренными службами</button>
 {% endblock %}

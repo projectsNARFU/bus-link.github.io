@@ -472,7 +472,7 @@ if __name__ == '__main__':
     # test_time = ['8:30', '8:40', '8:50', '9:05']
     # add_trip(1, test_time, 1, 1)
     # __update_busstop_trip(trip_id=1, stop_id=2, act_time='8:45', real_time='8:45')
-    update_trip(trip_id=1, list_stop_id=[1, 2, 3, 4], 
-                        list_act_time=['9:00', '9:15', '9:25', '9:35'],
-                        driver_id=2, bus_id=2)
+    # update_trip(trip_id=1, list_stop_id=[1, 2, 3, 4], 
+    #                     list_act_time=['9:00', '9:15', '9:25', '9:35'],
+    #                     driver_id=2, bus_id=2)
     pass
