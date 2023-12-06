@@ -1,19 +1,10 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
-    <title>Authorization</title>
+{% extends "base.html" %} {% block title %}Authorization{% endblock %}
 
-    <meta name="description" content="Authorization page" />
-    <link rel="stylesheet" href="../static/global.css" />
-    <link rel="stylesheet" href="../static/authorization.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400&display=swap"
-    />
-  </head>
-  <body>
+{% block head %}
+<link rel="stylesheet" href="../static/authorization.css" />
+{% endblock %}
+
+{% block content %}
     <div class="div35">
       <img class="background-icon8" alt="" src="{{ url_for('static',  filename='background@2x.png') }}" />
 
@@ -61,5 +52,4 @@
         });
       }
       </script>
-  </body>
-</html>
+{% endblock %}

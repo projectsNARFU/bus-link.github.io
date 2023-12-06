@@ -14,20 +14,21 @@ import json
 файл с основными путями страниц
 """
 
-def get_db_connection():
-    conn = psycopg2.connect(
-            host='localhost',
-            dbname='postgres',
-            user='postgres',
-            password='qwer',
-            port='5432')
-    return conn
-
-
 views = Blueprint('views', __name__)
 
 @views.route('/', methods=['GET', 'POST'])
 # @login_required
-def supervisor():
-    print(123)
-    return render_template("authorization.html")
+def authorization():
+    return render_template("test_auth.html")
+
+@views.route('/director_map', methods=['GET', 'POST'])
+def director_map():
+    return render_template("director_map.html")
+
+@views.route('/director_routes', methods=['GET', 'POST'])
+def director_routes():
+    return render_template("director_routes.html")
+
+@views.route('/dispatcher_map', methods=['GET', 'POST'])
+def dispatcher_map():
+    return render_template("dispatcher_map.html")

@@ -4,11 +4,10 @@ import folium
 import psycopg2
 # from . import db
 import json
-from website.databases.CRUD_bus import *
-from website.databases.CRUD_driver import *
-from website.databases.init_db import *
-from website.databases.CRUD_bus_stop import *
-
+# from website.databases.CRUD_bus import *
+# from website.databases.CRUD_driver import *
+# from website.databases.init_db import *
+# from website.databases.CRUD_bus_stop import *
 
 """
 файл с основными путями страниц
@@ -126,3 +125,6 @@ def adding_driver():
         add_driver(driver_name, driver_email, driver_pass)
 
         return redirect(url_for('views.traffic_controller'))
+
+if __name__ == '__main__':
+    print(a)

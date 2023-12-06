@@ -6,11 +6,21 @@
     {% block head %}{% endblock %}
     <title>{% block title %}Home{% endblock %}</title>
     <title>Title</title>
-    <link rel="stylesheet" href="../static/global.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400&display=swap"
-    />
+    <link rel="stylesheet" href="../static/style.css">
+    <style>
+
+      .book {
+          padding: 20px;
+          margin: 10px;
+          background-color: #f7f4f4;
+      }
+
+      .review {
+              margin-left: 50px;
+              font-size: 20px;
+      }
+
+  </style>
 </head>
 <body>
   <nav>
@@ -25,9 +35,11 @@
         <div>
           <!-- этот navbar временный, чтобы легче переключаться
           между страницами, на финале уже уберем -->
-        <a id="director_map" href="/director_map">director map</a>
-        <a id="director_routes" href="/director_routes">director routes</a>
-        <a id="director_editor" href="/director_editor">director editor</a>
+        <a id="supervisor" href="/">supervisor</a>
+        <a id="trafficController" href="/traffic-controller">traffic controller</a>
+        <a id="driver" href="/driver">driver</a>
+        <a id="passenger" href="/passenger">passenger</a>
+        <a id="input_test" href="/input_test">test</a>
         </div>
       </div>
     </nav>
