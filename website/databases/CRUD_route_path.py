@@ -24,4 +24,5 @@ def delete_route_path(id_route_path:int):
 if __name__ == '__main__':
     # add_route_path(123.32, 123.654)
     # update_route_path(1, 123.5, 123.8)
-    delete_route_path(1)
+    # delete_route_path(1)
+    pass

@@ -91,9 +91,13 @@ def passenger():
 
 @views.route('/input_test', methods=['GET', 'POST'])
 def test():
-    bus_stops = BusStop.select().order_by(BusStop.id_bus_stop)
-    print(bus_stops.dicts().execute()[:])
-    return render_template("input_test.html", bus_stops=bus_stops)
+    # add_driver('qwe wer wer', 'qweasd@mail.ru', 'qwerty')
+    # add_driver('qwe wer wer2', 'bgfd@mail.ru', 'asdf')
+    # add_driver('qwe wer wer3', 'nfgdd@mail.ru', 'zxcv')
+    drivers = Driver.select().order_by(Driver.id_driver)
+    drivers = drivers.dicts().execute()[:]
+    print(drivers)
+    return render_template("input_test.html", drivers=drivers)
 
 # ADD BUS STOP
 @views.route('/addstop', methods=["POST"])

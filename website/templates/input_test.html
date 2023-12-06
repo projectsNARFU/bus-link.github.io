@@ -27,14 +27,16 @@
     <button type="submit">Add</button>
 </form>
 <table>
-    <caption><b>Driver Stops</b></caption>
+    <caption><b>Drivers</b></caption>
     <thead>
+        {% for driver in drivers %}
         <tr>
-            <tr>name</tr> <tr>longitude</tr> <tr>latitude</tr>
+            <td>{{  driver['full_name'] }}</td> <td>{{ driver['email'] }}</td> <td>{{ driver['password'] }}</td>
         </tr>
+        {% endfor %}
     </thead>
     <tbody>
-        
+
     </tbody>
 </table>
 </div>
