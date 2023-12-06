@@ -26,7 +26,7 @@ def create_app():
     # app.register_blueprint(auth, url_prefix='/')
 
     # create_databases(app)
-    db.create_tables([BusStop, Bus, Driver, Route, BusTrip, RoutePath])
+    # db.create_tables([BusStop, Bus, Driver, Route, BusTrip])
 
     return app
 
