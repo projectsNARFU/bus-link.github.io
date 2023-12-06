@@ -1,14 +1,16 @@
-.div5 {
-  position: absolute;
-  top: calc(50% - 88px);
-  left: calc(50% - 87px);
-}
+.div2,
 .parent {
   position: relative;
+}
+.parent {
   background-color: var(--color-darkslateblue);
-  width: 348px;
-  height: 156px;
   overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 87px;
+  box-sizing: border-box;
   max-width: 90%;
   max-height: 90%;
   text-align: left;

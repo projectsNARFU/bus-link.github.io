@@ -15,12 +15,12 @@ body {
   --font-manrope: Manrope;
 
   /* font sizes */
-  --font-size-13xl: 32px;
-  --font-size-base: 16px;
-  --font-size-xl: 20px;
-  --font-size-29xl: 48px;
   --font-size-5xl: 24px;
+  --font-size-29xl: 48px;
+  --font-size-xl: 20px;
+  --font-size-mini: 15px;
   --font-size-17xl: 36px;
+  --font-size-3xs: 10px;
 
   /* Colors */
   --color-white: #fff;
@@ -28,7 +28,12 @@ body {
   --color-black: #000;
   --color-mediumslateblue: #0066ff;
 
+  /* Gaps */
+  --gap-3xs: 10px;
+
   /* Border radiuses */
+  --br-8xs: 5px;
   --br-xl: 20px;
+  --br-9xs: 4px;
   --br-3xs: 10px;
 }
