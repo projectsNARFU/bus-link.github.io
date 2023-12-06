@@ -261,6 +261,7 @@
   box-sizing: border-box;
   width: 320px;
   height: 55px;
+  font-size: x-large;
   z-index: 24;
 }
 .email,
@@ -323,6 +324,7 @@
   box-sizing: border-box;
   width: 320px;
   height: 55px;
+  font-size: x-large;
   z-index: 32;
 }
 .coord-latitude,
