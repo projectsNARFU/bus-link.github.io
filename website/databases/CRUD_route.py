@@ -1,6 +1,6 @@
 import psycopg2
 from peewee import *
-from .init_db import *
+from init_db import *
 
 
 def calc_distance(prev_stop, cur_stop):
@@ -157,7 +157,7 @@ def delete_busstop_route_cascade(route_id:int, stop_id:int):
     pass
 
 if __name__ == '__main__':
-    # add_route([1, 2, 3, 4])
+    add_route([1, 2, 3, 4])
     # update_busstop_route(2, 7, 1)
     # update_busstop_route(1, 7, 2)
     # delete_route(1)

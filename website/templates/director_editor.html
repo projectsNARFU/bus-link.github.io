@@ -38,12 +38,12 @@
         <div class="drivers-4"></div>
         <div class="drivers-3"></div>
       </div>
-      <div class="div8">Маршруты</div>
+      <div class="div8">Остановки</div>
       <div class="schedules-stroke-2">
         <div class="drivers-4"></div>
         <div class="drivers-3"></div>
       </div>
-      <div class="div9">Расписания</div>
+      <div class="div9">Маршруты</div>
       <div class="buses-stroke-2">
         <div class="drivers-4"></div>
         <div class="drivers-3"></div>
@@ -54,43 +54,54 @@
       <div class="div13">Почта</div>
       <div class="div14">ФИО</div>
       <div class="id">id остановки</div>
-      <input class="bus-number" type="text" />
 
-      <input class="id-bus-stop-id" type="text" />
+      <form action="/add-bus" method="POST">
+        <input class="bus-number" type="text" name="bus_number" />
+        <button class="plus-1" type="submit"></button>
+      </form>
+      
+      <form action="/add-route" method="POST">
+        <input class="id-bus-stop-id" type="text" name="bus_stop_name"/>
+        <input class="id-bus-stop-id" type="text" name="bus_stop_name"/>
+        <button class="plus-2" type="submit"></button>
+      </form>
 
-      <input class="password" type="password" />
-
-      <input class="email" type="email" />
-
-      <input class="full-name" type="text" />
+      <form action="/add-driver" method="POST">
+        <input class="password" type="password" name="password" />
+        <input class="email" type="email" name="email" />
+        <input class="full-name" type="text" name="full_name" />
+        <button class="plus-3" type="submit"></button>
+      </form>
 
       <div class="div15">Координаты широты</div>
       <div class="div16">Координаты долготы</div>
       <div class="div17">Название остановки</div>
-      <input class="message" type="text" />
 
-      <input class="coord-longitube" type="text" />
+      <form action="/add-bus-stop" method="POST">
+        <input class="message" type="text" name="bus_stop_name"/>
+        <input class="coord-longitube" type="text" name="longitude"/>
+        <input class="coord-latitude" type="text" name="latitude"/>
+        <button class="plus-4" type="submit"></button>
+      </form>
 
-      <input class="coord-latitude" type="text" />
-
-      <button class="plus-1"></button>
-      <button class="plus-2"></button>
-      <button class="plus-3"></button>
-      <button class="plus-4"></button>
+      <!-- <button class="plus-1" type="submit"></button> -->
+      
+      
+      
     </div>
 
     <script>
       var button4 = document.getElementById("button4");
       if (button4) {
         button4.addEventListener("click", function (e) {
-          window.location.href = "./director_routes.html";
+          window.location.href = "{{ url_for('views.director_routes') }}";
         });
       }
       
       var button6 = document.getElementById("button6");
       if (button6) {
         button6.addEventListener("click", function (e) {
-          window.location.href = "./director_map.html";
+          window.location.href = "{{ url_for('views.director_map') }}";
         });
       }
       </script>

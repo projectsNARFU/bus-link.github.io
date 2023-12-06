@@ -34,7 +34,7 @@
   right: 19px;
   width: 90px;
   height: 90px;
-  background-image: url(./public/button4@2x.png);
+  background-image: url(./button4@2x.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -55,7 +55,7 @@
   right: 133px;
   width: 100px;
   height: 100px;
-  background-image: url(./public/button6@2x.png);
+  background-image: url(./button6@2x.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -299,24 +299,24 @@
   left: calc(50% - 387px);
   z-index: 29;
 }
-.coord-latitude,
+.message,
 .coord-longitube,
 .div16,
 .div17,
-.message {
+.coord-latitude {
   top: calc(50% + 307px);
   z-index: 30;
 }
-.coord-latitude,
+.message,
 .coord-longitube,
 .div17,
-.message {
+.coord-latitude {
   top: calc(50% + 220px);
   z-index: 31;
 }
-.coord-latitude,
+.message,
 .coord-longitube,
-.message {
+.coord-latitude {
   border: 2px solid var(--color-black);
   background-color: var(--color-white);
   top: calc(50% + 419px);
@@ -327,12 +327,12 @@
   font-size: x-large;
   z-index: 32;
 }
-.coord-latitude,
+.message,
 .coord-longitube {
   top: calc(50% + 334px);
   z-index: 33;
 }
-.coord-latitude {
+.message {
   top: calc(50% + 247px);
   z-index: 34;
 }
@@ -350,7 +350,7 @@
   left: calc(50% - 457px);
   width: 30px;
   height: 30px;
-  background-image: url(./public/plus1@2x.png);
+  background-image: url(./plus1@2x.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;

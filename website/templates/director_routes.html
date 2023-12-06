@@ -1,19 +1,10 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
-    <title>Routes</title>
+{% extends "base.html" %} {% block title %}Authorization{% endblock %}
 
-    <meta name="description" content="Director's routes" />
-    <link rel="stylesheet" href="../static/global.css" />
-    <link rel="stylesheet" href="../static/director_routes.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400&display=swap"
-    />
-  </head>
-  <body>
+{% block head %}
+<link rel="stylesheet" href="../static/director_routes.css" />
+{% endblock %}
+
+{% block content %}
     <div class="div26">
       <img class="background-icon3" alt="" src="{{ url_for('static',  filename='background@2x.png') }}" />
 
@@ -53,7 +44,7 @@
       <div class="map-3"></div>
     </div>
 
-    <!-- <script>
+    <script>
       var button5 = document.getElementById("button5");
       if (button5) {
         button5.addEventListener("click", function (e) {
@@ -67,6 +58,5 @@
           window.location.href = "./director_map.html";
         });
       }
-      </script> -->
-  </body>
-</html>
+      </script>
+{% endblock %}

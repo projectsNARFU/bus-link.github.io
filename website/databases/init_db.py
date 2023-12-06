@@ -70,11 +70,19 @@ class BusTrip(BaseModel):
         primary_key = CompositeKey('id_trip', 'id_bus_stop')
 
     
+class PathPoint(BaseModel):
+    """"""
+    id_path_point = AutoField()
+    coord_longitude = FloatField(default=0)
+    coord_latitude = FloatField(default=0)
+    class Meta:
+        table_name = 'path_point'
+
 class RoutePath(BaseModel):
     """"""
     id_route_path = AutoField()
-    coord_longitude = FloatField(default=0)
-    coord_latitude = FloatField(default=0)
+    id_route = IntegerField(null=False)
+    id_path_point = ForeignKeyField(PathPoint, backref='route_paths', unique=True)
     class Meta:
         table_name = 'route_path'
 
@@ -109,4 +117,5 @@ def init_dbs():
 
 if __name__ == '__main__':
     # init_dbs()
-    db.create_tables([BusStop, Bus, Driver, Route, BusTrip, RoutePath])
+    # db.create_tables([BusStop, Bus, Driver, Route, BusTrip, RoutePath])
+    pass
