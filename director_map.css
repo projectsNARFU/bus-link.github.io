@@ -1,24 +1,24 @@
-.background-icon5 {
+.background-icon6 {
   position: relative;
   width: 1920px;
   height: 1080px;
   object-fit: cover;
   z-index: 0;
 }
-.triangle-1-icon5,
-.triangle-2-icon5 {
+.triangle-1-icon6,
+.triangle-2-icon6 {
   position: absolute;
   margin: 0 !important;
   object-fit: cover;
 }
-.triangle-1-icon5 {
+.triangle-1-icon6 {
   top: 0;
   left: 0;
   width: 150px;
   height: 150px;
   z-index: 1;
 }
-.triangle-2-icon5 {
+.triangle-2-icon6 {
   right: 0;
   bottom: 0;
   width: 100px;
@@ -54,14 +54,14 @@
   z-index: 4;
 }
 .button-41,
-.div20,
+.div37,
 .map-2 {
   position: absolute;
   margin: 0 !important;
 }
 .map-2 {
-  top: calc(50% - 420px);
-  left: calc(50% - 760px);
+  top: calc(50% - 410px);
+  left: calc(50% - 800px);
   background-color: var(--color-white);
   border: 3px solid var(--color-darkslateblue);
   box-sizing: border-box;
@@ -69,12 +69,12 @@
   height: 900px;
   z-index: 5;
 }
-.div20 {
+.div37 {
   top: 28px;
   left: calc(50% - 67px);
   z-index: 6;
 }
-.div19 {
+.div36 {
   position: relative;
   background-color: var(--color-white);
   width: 100%;
