@@ -34,7 +34,7 @@ def authorization():
 
 @views.route('/director_map', methods=['GET', 'POST'])
 def director_map():
-    global mapObj, Bus, markers, mark, click, current_time, speed_bus, i, x, koordinate_x, koordinate_y
+    global mapObj, BusMarker, markers, mark, click, current_time, speed_bus, i, x, koordinate_x, koordinate_y
     mapObj = folium.Map(location=[64.53827, 40.4245],
                         zoom_start=14, width=1500, height=750)
 
@@ -83,8 +83,8 @@ def director_map():
         time = current_time2 - current_time
         road = [0.12, 0.03, 0.08, 0.10, 0.11, 0.09, 0.03, 0.37, 0.06, 1.16, 0.11,
                 0.10, 0.08, 0.07, 0.25, 0.14, 0.08, 0.07, 0.25, 0.07, 0.32]
-        if time/9 % 60 == 0:
-            road = road[::-1]
+        # if time/9 % 60 == 0:
+        #     road = road[::-1]
         distanse = time * speed_bus
         s = 0
         d = 0
@@ -117,8 +117,8 @@ def director_map():
     # icon_url = "./BSicon_BUS.png"
     icon_url = str(Path("BSicon_BUS.png"))
     icon = folium.features.CustomIcon(icon_url, icon_size=(40, 40))
-    Bus = folium.Marker(location=(mark), icon=icon,  draggable=True)
-    Bus.add_to(mapObj)
+    BusMarker = folium.Marker(location=(mark), icon=icon,  draggable=True)
+    BusMarker.add_to(mapObj)
 
 
     # DTP = folium.Marker(location=(64.5340251352963, 40.43985944959183), draggable=True)
@@ -135,7 +135,15 @@ def director_map():
 
 
     # Генерируем случайные числа для каждой точки
-    values = list(passengers_on_stops(stops_dict).values())
+     # TODO сделать прочтение в словарь координат остановок по порядку и количества пассажиров на них
+    # print(BusMarker.location)
+    #     print(BusMarker, BusMarker.location, 'LOCATION')
+    stops_dict = passengers_on_stops(get_bus_stop_all())
+    # print(stops_dict)
+    values = list(change_passengers(BusMarker.location, stops_dict).values())
+    
+    # stops_dict.values = values
+    # update_bus_stop_all(stops_dict)
     max_value=max(values)
 
     # # Предотвращение выхода за пределы
@@ -163,7 +171,6 @@ def director_map():
             tooltip=str(value)
         ).add_to(mapObj)
 
-
     # render the map object
     mapObj.get_root().render()
 
@@ -177,7 +184,7 @@ def director_map():
     script = mapObj.get_root().script.render()
 
     # print(header, body_html, script)
-    print(Bus.location)
+   
     return render_template("director_map.html", user=current_user,
                            header=header, body_html=body_html, script=script)
 
@@ -192,7 +199,7 @@ def update_marker():
         click = True
     #     new_coord = request.form["new_coord"]
     #     mark = list((float(x) for x in new_coord.split(",")))
-        print(Bus.location)
+        
         return redirect(url_for("views.director_map"))
 
 @views.route('/director_routes', methods=['GET', 'POST'])
@@ -211,8 +218,8 @@ def dispatcher_map():
 def adding_bus():
     if request.method == 'POST':
         bus_number = request.form['bus_number']
-        print(bus_number)
-        add_bus(bus_number)
+        print(request.form)
+        # add_bus(bus_number)
         return redirect(url_for('views.director_editor'))
 
 @views.route('/add-driver', methods=['POST'])

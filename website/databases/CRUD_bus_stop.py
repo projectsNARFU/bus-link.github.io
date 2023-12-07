@@ -20,7 +20,7 @@ def update_bus_stop_all(values:dict):
         updating_values = {'coord_longitude':coords[0],
                            'coord_latitude':coords[1],
                            'number_people':count_people}
-        print(updating_values)
+        # print(updating_values)
         update_bus_stop(updating_values)
 
 def update_bus_stop(values:dict):
@@ -32,7 +32,7 @@ def update_bus_stop(values:dict):
     if choosed_object:
 
         choosed_object = choosed_object.dicts().execute()[0]
-        name = values.get('bus_stop_name', choosed_object['bus_stop_name'])
+        # name = values.get('bus_stop_name', choosed_object['bus_stop_name'])
         number_people = values.get('number_people', choosed_object['number_people'])
         # longitude = values.get('coord_longitude', choosed_object['coord_longitude'])
         # latitude = values.get('coord_latitude', choosed_object['coord_latitude'])
@@ -47,8 +47,7 @@ def update_bus_stop(values:dict):
         #         BusStop.id_bus_stop==entered_id)
 
         updated_object = BusStop.update(
-            {BusStop.bus_stop_name:name,
-             BusStop.number_people:number_people}).where(
+            {BusStop.number_people:number_people}).where(
                 (BusStop.coord_longitude==longitude) &
                 (BusStop.coord_latitude==latitude))
         

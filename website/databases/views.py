@@ -251,7 +251,7 @@ def test():
     return render_template("input_test.html", bus_stops=bus_stops)
 
 # ADD BUS STOP
-@views.route('/addstop', methods=["POST"])
+@views.route('/add-stop', methods=["POST"])
 def adding_bus_stop():
     if request.method == 'POST':
         bus_stop_name = request.form['bus_stop_name']
@@ -262,16 +262,17 @@ def adding_bus_stop():
         return redirect(url_for('views.traffic_controller'))
 
 # ADD BUS
-@views.route('/addbus', methods=["POST"])
+@views.route('/add-bus', methods=["POST"])
 def adding_bus():
     if request.method == 'POST':
         bus_number = request.form['bus_number']
-        add_bus(bus_number)
+        print(bus_number)
+        # add_bus(bus_number)
 
         return redirect(url_for('views.traffic_controller'))
 
 # ADD DRIVER
-@views.route('/adddriver', methods=["POST"])
+@views.route('/add-driver', methods=["POST"])
 def adding_driver():
     if request.method == 'POST':
         driver_name = request.form['driver_name']
