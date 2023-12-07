@@ -1,15 +1,15 @@
 from flask import Blueprint, render_template, request, redirect, url_for
 from flask_login import login_required, current_user
 import folium
-import psycopg2
 from datetime import datetime
-from pathlib import Path 
+import psycopg2
 
 from folium import PolyLine
 from folium.plugins import Draw
 from geopy.distance import geodesic
 import math
 import random
+
 
 from website.databases.CRUD_bus import *
 from website.databases.CRUD_driver import *
@@ -23,24 +23,37 @@ import json
 файл с основными путями страниц
 """
 
+def get_db_connection():
+    conn = psycopg2.connect(
+            host='localhost',
+            dbname='postgres',
+            user='postgres',
+            password='qwer',
+            port='5432')
+    return conn
+
+
 views = Blueprint('views', __name__)
 click = False
 
 @views.route('/', methods=['GET', 'POST'])
 # @login_required
-def authorization():
-    return render_template("test_auth.html")
+def supervisor():
+    return render_template("supervisor.html", user=current_user)
 
-@views.route('/director_map', methods=['GET', 'POST'])
-def director_map():
+
+
+@views.route('/traffic-controller', methods=['GET', 'POST'])
+def traffic_controller():
     global mapObj, Bus, markers, mark, click, current_time, speed_bus, i, x, koordinate_x, koordinate_y
     mapObj = folium.Map(location=[64.53827, 40.4245],
-                        zoom_start=14, width=1500, height=750)
+                        zoom_start=12, width=800, height=500)
 
     # add a marker to the map object
     folium.Marker([17.4127332, 78.078362],
                   popup="<i>This a marker</i>").add_to(mapObj)
-    
+
+
     # Добавляем линию PolyLine на карту
     line_points = [[64.54158, 40.39934], [64.54074, 40.40095], [64.54051, 40.40125], [64.54001, 40.40232], [64.53947, 40.40394],
                    [64.53898, 40.40585], [64.53865, 40.40765], [64.53857, 40.4082], [64.53755, 40.41549], [64.53737, 40.41662],
@@ -113,10 +126,9 @@ def director_map():
         print(mark)
 
     # Создаем отдельный маркер с изображением
-    # icon_url = "./BSicon_BUS.png"
-    icon_url = str(Path("BSicon_BUS.png"))
+    icon_url = 'BSicon_BUS.svg.png'
     icon = folium.features.CustomIcon(icon_url, icon_size=(40, 40))
-    Bus = folium.Marker(location=(mark), icon=icon,  draggable=True)
+    Bus = folium.Marker(location=(mark), icon=icon, draggable=True)
     Bus.add_to(mapObj)
 
 
@@ -177,63 +189,65 @@ def director_map():
 
     # print(header, body_html, script)
     print(Bus.location)
-    return render_template("director_map.html", user=current_user,
+    return render_template('traffic_controller.html', user=current_user,
                            header=header, body_html=body_html, script=script)
 
+
+# Обновление координат маркера(Автобуса) на карту
 @views.route('/update_marker', methods=['POST'])
 def update_marker():
     global click
     if request.method == 'POST':
-        button_name = request.form['button']
-        print(button_name)
-        if button_name:
-            print(1)
         click = True
     #     new_coord = request.form["new_coord"]
     #     mark = list((float(x) for x in new_coord.split(",")))
         print(Bus.location)
-        return redirect(url_for("views.director_map"))
+        return redirect(url_for("views.traffic_controller"))
 
-@views.route('/director_routes', methods=['GET', 'POST'])
-def director_routes():
-    return render_template("director_routes.html")
+    # route_path = RoutePath.select().where(RoutePath.id_route_path == 1)
+    # route_path = route_path.dicts().execute()[0]
+    #
+    # # print(float(route_path['coord_longitude']), float(route_path['coord_latitude']))
+    # mark = float(route_path['coord_longitude']), float(route_path['coord_latitude'])
+    # print(mark)
+    # return redirect(url_for("views.traffic_controller"))
 
-@views.route('/director_editor', methods=['GET', 'POST'])
-def director_editor():
-    return render_template("director_editor.html")
+@views.route('/traffic-controller/chat', methods=['GET', 'POST'])
+def traffic_controller_chat():
+    # test_list_drivers = ['vanya', 'dima', 'bob']
 
-@views.route('/dispatcher_map', methods=['GET', 'POST'])
-def dispatcher_map():
-    return render_template("dispatcher_map.html")
+    drivers = BusStop.select().order_by(BusStop.id_bus_stop)
+    print(drivers.dicts().execute()[:])
 
-@views.route('/add-bus', methods=['POST'])
-def adding_bus():
-    if request.method == 'POST':
-        bus_number = request.form['bus_number']
-        print(bus_number)
-        add_bus(bus_number)
-        return redirect(url_for('views.director_editor'))
+    # conn = get_db_connection()
+    # cur = conn.cursor()
+    # cur.execute('SELECT * FROM drivers;')
+    # drivers = cur.fetchall()
+    # cur.close()
+    # conn.close()
+    # print(drivers)
 
-@views.route('/add-driver', methods=['POST'])
-def adding_driver():
-    if request.method == 'POST':
-        full_name = request.form['full_name']
-        email = request.form['email']
-        password = request.form['password']
-        add_driver(full_name, email, password)
+    return render_template("traffic_controller_chat.html", user=current_user, drivers=drivers)
 
-        return redirect(url_for('views.director_editor'))
-    
-@views.route('/add-route', methods=['POST'])
-def adding_route():
-    if request.method == 'POST':
-        route_stops = request.form['bus_stop_name']
-        route_stops = route_stops.split(' ')
-        print(route_stops)
 
-        return redirect(url_for('views.director_editor'))
+@views.route('/driver', methods=['GET', 'POST'])
+def driver():
+    return render_template("driver.html", user=current_user)
 
-@views.route('/add-bus-stop', methods=['POST'])
+
+@views.route('/passenger', methods=['GET', 'POST'])
+def passenger():
+    return render_template("passenger.html", user=current_user)
+
+
+@views.route('/input_test', methods=['GET', 'POST'])
+def test():
+    bus_stops = BusStop.select().order_by(BusStop.id_bus_stop)
+    print(bus_stops.dicts().execute()[:])
+    return render_template("input_test.html", bus_stops=bus_stops)
+
+# ADD BUS STOP
+@views.route('/addstop', methods=["POST"])
 def adding_bus_stop():
     if request.method == 'POST':
         bus_stop_name = request.form['bus_stop_name']
@@ -241,13 +255,24 @@ def adding_bus_stop():
         latitude = request.form['latitude']
         add_bus_stop(bus_stop_name, longitude, latitude)
 
-        return redirect(url_for('views.director_editor'))
+        return redirect(url_for('views.traffic_controller'))
 
-@views.route('/add-route-path', methods=['POST'])
-def adding_route_path():
+# ADD BUS
+@views.route('/addbus', methods=["POST"])
+def adding_bus():
     if request.method == 'POST':
-        route_id = request.form['id_route']
-        list_coords = request.form['list_coords']
-        add_route_path(route_id, list_coords)
-        
-        return redirect(url_for('views.director_editor'))
+        bus_number = request.form['bus_number']
+        add_bus(bus_number)
+
+        return redirect(url_for('views.traffic_controller'))
+
+# ADD DRIVER
+@views.route('/adddriver', methods=["POST"])
+def adding_driver():
+    if request.method == 'POST':
+        driver_name = request.form['driver_name']
+        driver_email = request.form['driver_email']
+        driver_pass = request.form['driver_pass']
+        add_driver(driver_name, driver_email, driver_pass)
+
+        return redirect(url_for('views.traffic_controller'))

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <title>Traffic controller</title>
+
+    <meta name="description" content="Director's map" />
+    <link rel="stylesheet" href="../static/global.css" />
+    <link rel="stylesheet" href="../static/director_map.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400&display=swap"
+    />
+  </head>
+  <body>
+    <div class="div29">
+      <img class="background-icon5" alt="" src="{{ url_for('static',  filename='background@2x.png') }}" />
+
+      <img class="triangle-1-icon5" alt="" src="{{ url_for('static',  filename='triangle-1@2x.png') }}" />
+
+      <img class="triangle-2-icon5" alt="" src="{{ url_for('static',  filename='triangle-2@2x.png') }}" />
+
+      <button class="button-51" id="button5" action=""></button>
+      <button class="button-41" id="button4"></button>
+      <div class="map-2">
+
+        <br />
+        <div class="main_block">
+        <div class="inline_block">
+            <a id="supervisor" href="/traffic-controller/chat">chat with drivers</a>
+            <h1>Embed folium map in HTML page</h1>
+            {{ body_html|safe }}
+            <h3>This map is embeded in a flask server web page !</h3>
+            <script>
+                {{ script|safe }}
+            </script>
+        </div>
+        <div class="inline_block">
+            <p>qwerrewqqwerreqw</p>
+            <button>test</button>
+        </div>
+        </div>
+        <button>Связь с экстренными службами</button>
+        
+        <button id="updateBusLocation">Узнать где сейчас автобус</button>
+        
+        <form action = "/update_marker" method ="POST">
+          <input type="text" name = "new_coord">
+          <button type="submit">Принять</button>
+        </form>
+
+      </div>
+      <div class="div30">Карта</div>
+    </div>
+
+    <script>
+      var button5 = document.getElementById("button5");
+      if (button5) {
+        button5.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('views.director_editor') }}";
+        });
+      }
+      
+      var button4 = document.getElementById("button4");
+      if (button4) {
+        button4.addEventListener("click", function (e) {
+          window.location.href = "{{ url_for('views.director_routes') }}";
+        });
+      }
+      </script>
+  </body>
+</html>
