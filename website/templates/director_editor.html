@@ -6,8 +6,8 @@
     <title>Editor</title>
 
     <meta name="description" content="Director's editor" />
-    <link rel="stylesheet" href="./global.css" />
-    <link rel="stylesheet" href="./director_editor.css" />
+    <link rel="stylesheet" href="../static/global.css" />
+    <link rel="stylesheet" href="../static/director_editor.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400&display=swap"
@@ -15,11 +15,11 @@
   </head>
   <body>
     <div class="div5">
-      <img class="background-icon1" alt="" src="./public/background@2x.png" />
+      <img class="background-icon1" alt="" src="{{ url_for('static',  filename='background@2x.png') }}" />
 
-      <img class="triangle-1-icon1" alt="" src="./public/triangle-1@2x.png" />
+      <img class="triangle-1-icon1" alt="" src="{{ url_for('static',  filename='triangle-1@2x.png') }}" />
 
-      <img class="triangle-2-icon1" alt="" src="./public/triangle-2@2x.png" />
+      <img class="triangle-2-icon1" alt="" src="{{ url_for('static',  filename='triangle-2@2x.png') }}" />
 
       <button class="button-4" id="button4"></button>
       <button class="button-6" id="button6"></button>
@@ -27,7 +27,13 @@
       <div class="route-space1"></div>
       <div class="route-space2"></div>
       <div class="route-space3"></div>
-      <div class="route-space4"></div>
+      <div class="route-space4">
+        <form action="/add-route-path" method="POST">
+          <input type="text" name="id_route" />
+          <input type="text" name="list_coords" />
+          <button type="submit"></button>
+        </form>
+      </div>
       <div class="div6">Редактор</div>
       <div class="drivers-stroke-2">
         <div class="drivers-4"></div>
@@ -38,27 +44,45 @@
         <div class="drivers-4"></div>
         <div class="drivers-3"></div>
       </div>
-      <div class="div8">Маршруты</div>
+      <div class="div8">Остановки</div>
       <div class="schedules-stroke-2">
         <div class="drivers-4"></div>
         <div class="drivers-3"></div>
       </div>
-      <div class="div9">Расписания</div>
+      <div class="div9">Маршруты</div>
       <div class="buses-stroke-2">
         <div class="drivers-4"></div>
         <div class="drivers-3"></div>
       </div>
-      <div class="div10">Автобусы</div>
-      <div class="div11">Номер автобуса</div>
+      
+      
       <div class="div12">Пароль</div>
       <div class="div13">Почта</div>
       <div class="div14">ФИО</div>
-      <div class="id">id остановки</div>
+      <div class="id">id маршрута</div>
+      
+
+      <div class="div10">Автобусы</div>
+      <div class="div11">Номер автобуса</div>
+      <div class="id4">id автобуса</div>
+      <form action="/add-bus" method="POST">
+        <input class="bus-number" type="text" name="bus_number" />
+        <input class="bus-id" type="text" name="id_bus"/>
+        <button class="plus-5" type="submit"></button>
+        <!-- <button class="plus-1" type="submit"></button> -->
+      </form>
+
       <input class="bus-number" type="text" />
 
       <input class="id-bus-stop-id" type="text" />
 
+      <div class="id1">id остановки</div>
+      <input class="id-bus-stop-id1" type="text" />
+
       <input class="password" type="password" />
+
+      <div class="id2">id водителя</div>
+      <input class="id-driver" type="text" />
 
       <input class="email" type="email" />
 
@@ -67,30 +91,44 @@
       <div class="div15">Координаты широты</div>
       <div class="div16">Координаты долготы</div>
       <div class="div17">Название остановки</div>
-      <input class="message" type="text" />
+      <input class="coord-latitude" type="text" />
+
+      <div class="id3">id остановки</div>
+      <input class="id-stop" type="text" />
 
       <input class="coord-longitube" type="text" />
 
-      <input class="coord-latitude" type="text" />
+      <input class="stop-name" type="text" />
 
-      <button class="plus-1"></button>
+      
+      
+
+      
       <button class="plus-2"></button>
       <button class="plus-3"></button>
       <button class="plus-4"></button>
+      <button class="update-1"></button>
+      <button class="update-2"></button>
+      <button class="update-3"></button>
+      <button class="update-4"></button>
+      <button class="trash-1"></button>
+      <button class="trash-2"></button>
+      <button class="trash-3"></button>
+      <button class="trash-4"></button>
     </div>
 
     <script>
       var button4 = document.getElementById("button4");
       if (button4) {
         button4.addEventListener("click", function (e) {
-          window.location.href = "./director_routes.html";
+          window.location.href = "{{ url_for('views.director_routes') }}";
         });
       }
       
       var button6 = document.getElementById("button6");
       if (button6) {
         button6.addEventListener("click", function (e) {
-          window.location.href = "./director_map.html";
+          window.location.href = "{{ url_for('views.director_map') }}";
         });
       }
       </script>

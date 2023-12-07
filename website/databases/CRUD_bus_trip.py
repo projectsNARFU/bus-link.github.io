@@ -1,6 +1,6 @@
 import psycopg2
 from peewee import *
-from init_db import *
+from .init_db import *
 
 
 def add_trip(route_id:int, arrival_time:list, driver_id:int, bus_id:int):

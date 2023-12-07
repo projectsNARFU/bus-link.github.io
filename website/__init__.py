@@ -9,7 +9,6 @@ from .databases.init_db import *
 Инициализируется всегда, когда программа открывает папку website
 """
 
-
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'dsavmfdsoqwevp'
@@ -18,6 +17,7 @@ def create_app():
     # db.init_app(app)
 
     from .views import views
+    # from .views_old import views_old
 
     # авторизация человека
     # from .auth import auth
@@ -26,7 +26,7 @@ def create_app():
     # app.register_blueprint(auth, url_prefix='/')
 
     # create_databases(app)
-    db.create_tables([BusStop, Bus, Driver, Route, BusTrip])
+    db.create_tables([BusStop, Bus, Driver, Route, BusTrip, PathPoint, RoutePath])
 
     return app
 

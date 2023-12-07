@@ -1,6 +1,6 @@
 import psycopg2
 from peewee import *
-from init_db import *
+from .init_db import *
 
 
 def add_driver(full_name:str, email:str, password:str):

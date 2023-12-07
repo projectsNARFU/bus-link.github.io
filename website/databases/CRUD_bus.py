@@ -1,6 +1,6 @@
 import psycopg2
 from peewee import *
-from init_db import *
+from .init_db import *
 
 
 def add_bus(bus_num:int):
@@ -52,7 +52,7 @@ def delete_bus(bus_id:int):
 
 if __name__ == '__main__':
     pass
-    # add_bus(9)
+    add_bus(9)
     # test_bus = {'id_bus': 2, 'bus_number': 76}
     # update_bus(test_bus)
     # delete_bus(3)

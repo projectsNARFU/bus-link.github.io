@@ -42,7 +42,7 @@
   right: 13px;
   width: 100px;
   height: 100px;
-  background-image: url(./public/button5@2x.png);
+  background-image: url(./button5@2x.png);
   z-index: 3;
 }
 .button-41 {
@@ -50,7 +50,7 @@
   right: 143px;
   width: 90px;
   height: 90px;
-  background-image: url(./public/button4@2x.png);
+  background-image: url(./button4@2x.png);
   z-index: 4;
 }
 .button-41,

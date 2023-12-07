@@ -6,24 +6,24 @@
     <title>Authorization</title>
 
     <meta name="description" content="Authorization page" />
-    <link rel="stylesheet" href="./global.css" />
-    <link rel="stylesheet" href="./authorization.css" />
+    <link rel="stylesheet" href="../static/global.css" />
+    <link rel="stylesheet" href="../static/authorization.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400&display=swap"
     />
   </head>
   <body>
-    <div class="div35">
-      <img class="background-icon8" alt="" src="./public/background@2x.png" />
+    <div class="div">
+      <img class="background-icon" alt="" src="{{ url_for('static',  filename='background@2x.png') }}" />
 
-      <img class="triangle-1-icon8" alt="" src="./public/triangle-1@2x.png" />
+      <img class="triangle-1-icon" alt="" src="{{ url_for('static',  filename='triangle-1@2x.png') }}" />
 
-      <img class="triangle-2-icon8" alt="" src="./public/triangle-2@2x.png" />
+      <img class="triangle-2-icon" alt="" src="{{ url_for('static',  filename='triangle-2@2x.png') }}" />
 
-      <div class="div36">Авторизация</div>
-      <div class="div37">Логин</div>
-      <div class="div38">Пароль</div>
+      <div class="div1">Авторизация</div>
+      <div class="div2">Логин</div>
+      <div class="div3">Пароль</div>
       <input class="rectangle-login-mob" type="text" />
 
       <input class="rectangle-password-mob" type="password" />
@@ -31,11 +31,11 @@
       <button class="button" id="button">Восстановление пароля</button>
       <button class="button1" id="button1">Зарегистрироваться</button>
       <div class="buslink">Первый раз в BusLink?</div>
-      <img class="logo-2-icon" alt="" src="./public/logo-2@2x.png" />
+      <img class="logo-2-icon" alt="" src="{{ url_for('static',  filename='logo-2@2x.png') }}" />
 
-      <button class="enter-mob">
+      <button class="enter-mob" id="enterMob">
         <div class="enter-mob1"></div>
-        <div class="div39">Войти</div>
+        <div class="div4">Войти</div>
       </button>
     </div>
 
@@ -51,6 +51,13 @@
       if (button1) {
         button1.addEventListener("click", function (e) {
           window.location.href = "./registration.html";
+        });
+      }
+      
+      var enterMob = document.getElementById("enterMob");
+      if (enterMob) {
+        enterMob.addEventListener("click", function (e) {
+          window.location.href = "./director_map.html";
         });
       }
       </script>
