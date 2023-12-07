@@ -4,6 +4,7 @@ from flask import Flask
 from .databases.init_db import *
 from .databases.CRUD_bus_stop import *
 from .passengers import passengers_on_stops
+from .data_values_initialization import *
 # from flask_login import LoginManager
 
 
@@ -29,6 +30,8 @@ def create_app():
 
     # create_databases(app)
     db.create_tables([BusStop, Bus, Driver, Route, BusTrip, PathPoint, RoutePath])
+    init_path_points()
+    init_bus_stops()
 
     dict_stops = passengers_on_stops(get_bus_stop_all())
     print(dict_stops)

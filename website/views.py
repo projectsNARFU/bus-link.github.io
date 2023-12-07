@@ -15,6 +15,7 @@ from website.databases.CRUD_bus import *
 from website.databases.CRUD_driver import *
 from website.databases.init_db import *
 from website.databases.CRUD_bus_stop import *
+from website.databases.CRUD_path_point import *
 from website.databases.CRUD_route_path import *
 from .passengers import *
 # from . import db
@@ -43,13 +44,11 @@ def director_map():
                   popup="<i>This a marker</i>").add_to(mapObj)
     
     # Добавляем линию PolyLine на карту
-    line_points = [[64.54158, 40.39934], [64.54074, 40.40095], [64.54051, 40.40125], [64.54001, 40.40232], [64.53947, 40.40394],
-                   [64.53898, 40.40585], [64.53865, 40.40765], [64.53857, 40.4082], [64.53755, 40.41549], [64.53737, 40.41662],
-                   [64.53404, 40.43952], [64.53387, 40.44188], [64.53358, 40.44394], [64.53331, 40.44548], [64.53302, 40.44681],
-                   [64.53221, 40.45156], [64.53198, 40.45446], [64.53202, 40.45622], [64.53203, 40.45775], [64.53208, 40.46304],
-                   [64.53243, 40.4642], [64.53291, 40.47069]]
+    line_points = get_path_points()
     # Добавляем несколько маркеров
-    markers = [(64.54161, 40.39945), (64.53747, 40.41655), (64.53537, 40.43097), (64.53382, 40.44243), (64.53206, 40.45398), (64.53209, 40.46036), (64.53297, 40.4708)]
+    markers = list(get_bus_stop_all().keys())
+     
+    # markers = [(64.54161, 40.39945), (64.53747, 40.41655), (64.53537, 40.43097), (64.53382, 40.44243), (64.53206, 40.45398), (64.53209, 40.46036), (64.53297, 40.4708)]
     start_coordinates = markers[0]
     for marker in markers:
         folium.Marker(location=marker).add_to(mapObj)
