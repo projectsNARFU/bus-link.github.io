@@ -73,10 +73,11 @@ class BusTrip(BaseModel):
 class PathPoint(BaseModel):
     """"""
     id_path_point = AutoField()
-    coord_longitude = FloatField(default=0)
-    coord_latitude = FloatField(default=0)
+    coord_longitude = TextField(default=0)
+    coord_latitude = TextField(default=0)
     class Meta:
         table_name = 'path_point'
+        indexes = ((('coord_longitude', 'coord_latitude'), True),)
 
 class RoutePath(BaseModel):
     """"""

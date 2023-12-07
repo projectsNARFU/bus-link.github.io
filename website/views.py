@@ -7,6 +7,7 @@ from website.databases.CRUD_bus import *
 from website.databases.CRUD_driver import *
 from website.databases.init_db import *
 from website.databases.CRUD_bus_stop import *
+from website.databases.CRUD_route_path import *
 # from . import db
 import json
 
@@ -72,4 +73,13 @@ def adding_bus_stop():
         latitude = request.form['latitude']
         add_bus_stop(bus_stop_name, longitude, latitude)
 
+        return redirect(url_for('views.director_editor'))
+
+@views.route('/add-route-path', methods=['POST'])
+def adding_route_path():
+    if request.method == 'POST':
+        route_id = request.form['id_route']
+        list_coords = request.form['list_coords']
+        add_route_path(route_id, list_coords)
+        
         return redirect(url_for('views.director_editor'))

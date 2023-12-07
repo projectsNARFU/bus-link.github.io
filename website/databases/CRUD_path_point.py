@@ -1,6 +1,6 @@
 import psycopg2
 from peewee import *
-from init_db import *
+from .init_db import *
 
 def add_path_point(longitude:float, latitude:float):
     PathPoint.create(coord_longitude=longitude, coord_latitude=latitude)
