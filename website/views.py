@@ -16,6 +16,7 @@ from website.databases.CRUD_driver import *
 from website.databases.init_db import *
 from website.databases.CRUD_bus_stop import *
 from website.databases.CRUD_route_path import *
+from .passengers import *
 # from . import db
 import json
 
@@ -134,18 +135,18 @@ def director_map():
 
 
     # Генерируем случайные числа для каждой точки
-    max_value = 25  # Максимальное значение
-    values = [random.randint(0, max_value) for _ in range(len(markers))]
+    values = list(passengers_on_stops(stops_dict).values())
+    max_value=max(values)
 
-    # Предотвращение выхода за пределы
-    values = [max(0, min(value, max_value)) for value in values]
+    # # Предотвращение выхода за пределы
+    # values = [max(0, min(value, max_value)) for value in values]
 
     # Определяем цвета в зависимости от значений
     color_scale = ['green', 'yellow', 'red']
     colors = [color_scale[math.floor(value / (26 / len(color_scale)))] for value in values]
 
     # Определяем масштаб для радиуса круга
-    max_radius = 25  # Максимальный радиус круга
+    max_radius = 20  # Максимальный радиус круга
     min_radius = 5  # Минимальный радиус круга
 
     # Добавляем круги на карту

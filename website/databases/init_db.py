@@ -13,9 +13,8 @@ class BaseModel(Model):
 class BusStop(BaseModel):
     id_bus_stop = AutoField()
     number_people = IntegerField(null=False , default=0)
-    bus_stop_name = TextField(null=False, unique=True)
-    coord_longitude = FloatField(default=0)
-    coord_latitude = FloatField(default=0)
+    coord_longitude = TextField(null=False)
+    coord_latitude = TextField(null=False)
     class Meta:
         table_name = 'bus_stop'
 
@@ -118,5 +117,5 @@ def init_dbs():
 
 if __name__ == '__main__':
     # init_dbs()
-    # db.create_tables([BusStop, Bus, Driver, Route, BusTrip, RoutePath])
+    db.create_tables([BusStop, Bus, Driver, Route, BusTrip, RoutePath])
     pass

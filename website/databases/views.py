@@ -123,6 +123,10 @@ def traffic_controller():
             return x, y
 
         mark = calculate_bus_coordinates(line_points[f - 1], line_points[f], asa)
+        if mark[0] <= 64.53291:
+            mark = (64.54158, 40.39934)
+        elif mark[1] >= 40.47069:
+            mark = (64.53291, 40.39934)
         print(mark)
 
     # Создаем отдельный маркер с изображением
